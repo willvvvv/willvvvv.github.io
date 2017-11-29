@@ -321,14 +321,24 @@
       
         
           
-            <p>##UML类图说明</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmmldfihj202a04qjr9.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">classB extends classA&#123;&#125;</span><br><span class="line">```-</span><br><span class="line">### 实现</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg)</span><br></pre></td></tr></table></figure>
-<p>classD implements classC{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 依赖</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwms84jkyj202k04qa9x.jpg)</span><br></pre></td></tr></table></figure></p>
-<p>classF{<br>    method(ClassE classE);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 关联</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmuz663tj202d04pa9x.jpg)</span><br></pre></td></tr></table></figure></p>
-<p>classH{<br>    ClassG classG;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 聚合</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmwja183j202604oa9x.jpg)</span><br></pre></td></tr></table></figure></p>
-<p>classJ{<br>    ClassI classI;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">classJ has classI, 公司拥有员工的关系，生命周期不在一起，和关联在类的表达上一致，只是强化了拥有关系</span><br><span class="line"></span><br><span class="line">-</span><br><span class="line"></span><br><span class="line">### 组合</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmzb3k5ij202504ldfp.jpg)</span><br></pre></td></tr></table></figure></p>
-<p>classL{<br>    ClassK classK;<br>}<br>```</p>
+            <h2 id="UML类图说明"><a href="#UML类图说明" class="headerlink" title="UML类图说明"></a>UML类图说明</h2><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmmldfihj202a04qjr9.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classB extends classA&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>-</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg" alt=""> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classD implements classC&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>-</p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwms84jkyj202k04qa9x.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classF&#123;</span><br><span class="line">	method(ClassE classE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-</p>
+<h3 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmuz663tj202d04pa9x.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classH&#123;</span><br><span class="line">	ClassG classG;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-</p>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmwja183j202604oa9x.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classJ&#123;</span><br><span class="line">	ClassI classI;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>classJ has classI, 公司拥有员工的关系，生命周期不在一起，和关联在类的表达上一致，只是强化了拥有关系</p>
+<p>-</p>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmzb3k5ij202504ldfp.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">classL&#123;</span><br><span class="line">	ClassK classK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>classL contains classK, 强聚合关系，生命周期完全一致</p>
 
           
