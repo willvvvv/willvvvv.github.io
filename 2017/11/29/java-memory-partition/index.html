@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Willvvvv’s Notes">
 <meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:36:10.000Z">
+<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA内存分区">
 <meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
@@ -336,7 +336,7 @@
 <li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
 <li>Perm区的垃圾回收也是由Full GC触发的</li>
 </ol>
-<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
 
       
     </div>
@@ -504,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建议"><span class="nav-number"></span> <span class="nav-text">建议</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
             
 
           </div>
