@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="UML," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC">
-<meta name="keywords" content="JAVA">
+<meta name="description" content="##UML类图说明 继承 1234classB extends classA&amp;#123;&amp;#125;```-### 实现![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg) classD implements c">
+<meta name="keywords" content="UML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA内存分区">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/java-memory-partition/index.html">
+<meta property="og:title" content="uml类图简要说明">
+<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/uml-line-desc/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta property="og:description" content="##UML类图说明 继承 1234classB extends classA&amp;#123;&amp;#125;```-### 实现![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg) classD implements classC{}1234-### 依赖![](https://ws1.sinaimg.cn/lar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmmldfihj202a04qjr9.jpg">
+<meta property="og:updated_time" content="2017-11-29T08:51:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA内存分区">
-<meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta name="twitter:title" content="uml类图简要说明">
+<meta name="twitter:description" content="##UML类图说明 继承 1234classB extends classA&amp;#123;&amp;#125;```-### 实现![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg) classD implements classC{}1234-### 依赖![](https://ws1.sinaimg.cn/lar">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmmldfihj202a04qjr9.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/uml-line-desc/"/>
 
 
 
 
 
-  <title>JAVA内存分区 | Willvvvv’s Notes</title>
+  <title>uml类图简要说明 | Willvvvv’s Notes</title>
   
 
 
@@ -243,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/uml-line-desc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -260,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVA内存分区</h1>
+          <h1 class="post-title" itemprop="name headline">uml类图简要说明</h1>
         
 
         <div class="post-meta">
@@ -272,7 +274,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:34:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:50:18+08:00">
                 2017-11-29
               </time>
             
@@ -290,7 +292,7 @@
 
           
           
-             <span id="/2017/11/29/java-memory-partition/" class="leancloud_visitors" data-flag-title="JAVA内存分区">
+             <span id="/2017/11/29/uml-line-desc/" class="leancloud_visitors" data-flag-title="uml类图简要说明">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -321,22 +323,15 @@
       
 
       
-        <h2 id="Young"><a href="#Young" class="headerlink" title="Young"></a>Young</h2><h3 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h3><ol>
-<li>所有新创建的对象都在Eden区</li>
-<li>当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor</li>
-</ol>
-<h3 id="2Survivor"><a href="#2Survivor" class="headerlink" title="2Survivor"></a>2Survivor</h3><ol>
-<li>minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的</li>
-</ol>
-<h2 id="Old"><a href="#Old" class="headerlink" title="Old"></a>Old</h2><ol>
-<li>Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中</li>
-<li>如果Old区满了会触发Full GC，回收整个堆内存</li>
-</ol>
-<h2 id="Perm"><a href="#Perm" class="headerlink" title="Perm"></a>Perm</h2><ol>
-<li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
-<li>Perm区的垃圾回收也是由Full GC触发的</li>
-</ol>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
+        <p>##UML类图说明</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmmldfihj202a04qjr9.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">classB extends classA&#123;&#125;</span><br><span class="line">```-</span><br><span class="line">### 实现</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmosz6tsj202h04qmx1.jpg)</span><br></pre></td></tr></table></figure>
+<p>classD implements classC{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 依赖</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwms84jkyj202k04qa9x.jpg)</span><br></pre></td></tr></table></figure></p>
+<p>classF{<br>    method(ClassE classE);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 关联</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmuz663tj202d04pa9x.jpg)</span><br></pre></td></tr></table></figure></p>
+<p>classH{<br>    ClassG classG;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-</span><br><span class="line"></span><br><span class="line">### 聚合</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmwja183j202604oa9x.jpg)</span><br></pre></td></tr></table></figure></p>
+<p>classJ{<br>    ClassI classI;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">classJ has classI, 公司拥有员工的关系，生命周期不在一起，和关联在类的表达上一致，只是强化了拥有关系</span><br><span class="line"></span><br><span class="line">-</span><br><span class="line"></span><br><span class="line">### 组合</span><br><span class="line">![](https://ws1.sinaimg.cn/large/9aaab0cfgy1flwmzb3k5ij202504ldfp.jpg)</span><br></pre></td></tr></table></figure></p>
+<p>classL{<br>    ClassK classK;<br>}<br>```</p>
+<p>classL contains classK, 强聚合关系，生命周期完全一致</p>
 
       
     </div>
@@ -354,7 +349,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+            <a href="/tags/UML/" rel="tag"># UML</a>
           
         </div>
       
@@ -367,15 +362,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/29/pattern-principle/" rel="next" title="6大设计原则">
+                <i class="fa fa-chevron-left"></i> 6大设计原则
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/29/pattern-principle/" rel="prev" title="6大设计原则">
-                6大设计原则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a></li></ol></div>
             
 
           </div>
