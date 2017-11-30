@@ -3,6 +3,25 @@
 
 
     
+  <url>
+    <loc>http://willvvvv.github.io/2017/11/30/factory/</loc>
+    <lastmod>2017-11-30T06:25:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>工厂模式</title>
+        <pubTime>2017-11-30T03:06:32.000Z</pubTime>
+        
+        <tag>Pattern</tag>
+         
+        <tag>JAVA</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://willvvvv.github.io/2017/11/29/uml-line-desc/</loc>
@@ -29,9 +48,9 @@
         <title>6大设计原则</title>
         <pubTime>2017-11-29T08:44:17.000Z</pubTime>
         
-        <tag>JAVA</tag>
-         
         <tag>Pattern</tag>
+         
+        <tag>JAVA</tag>
          
          
            
