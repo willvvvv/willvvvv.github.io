@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://willvvvv.github.io/2017/11/30/singleton/</loc>
+    <lastmod>2017-11-30T09:43:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>单例模式</title>
+        <pubTime>2017-11-30T09:18:56.000Z</pubTime>
+        
+        <tag>Pattern</tag>
+         
+        <tag>JAVA</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://willvvvv.github.io/2017/11/29/pattern-principle/</loc>
     <lastmod>2017-11-30T09:08:07.000Z</lastmod>
     <data>
