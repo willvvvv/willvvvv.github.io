@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
+    <lastmod>2017-11-30T12:58:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式目录</title>
+        <pubTime>2017-11-24T16:00:00.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://willvvvv.github.io/2017/11/30/builder/</loc>
     <lastmod>2017-11-30T12:42:44.000Z</lastmod>
     <data>
@@ -11,9 +33,9 @@
         <title>建造者模式</title>
         <pubTime>2017-11-30T12:27:06.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
@@ -33,9 +55,9 @@
         <title>单例模式</title>
         <pubTime>2017-11-30T09:18:56.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
@@ -55,9 +77,9 @@
         <title>6大设计原则</title>
         <pubTime>2017-11-29T08:44:17.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
@@ -77,9 +99,9 @@
         <title>工厂方法模式</title>
         <pubTime>2017-11-30T07:16:38.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
@@ -99,9 +121,9 @@
         <title>抽象工厂模式</title>
         <pubTime>2017-11-30T08:05:18.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
@@ -122,9 +144,9 @@
         <title>工厂模式</title>
         <pubTime>2017-11-30T03:06:32.000Z</pubTime>
         
-        <tag>Pattern</tag>
-         
         <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
          
          
            
