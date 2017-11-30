@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    ">
+<meta name="description" content="类图 代码车类 12345678910111213141516171819202122232425262728class Car&amp;#123;    /**     * 轮胎     */    private String tire;    /**     * 发动机     */    private Str">
 <meta name="keywords" content="Pattern,JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工厂方法模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/30/factory-method/index.html">
+<meta property="og:title" content="建造者模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/11/30/builder/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    public void send(String message) &amp;#123;        Syste">
+<meta property="og:description" content="类图 代码车类 12345678910111213141516171819202122232425262728class Car&amp;#123;    /**     * 轮胎     */    private String tire;    /**     * 发动机     */    private String engine;    public void setTire(String ti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg">
-<meta property="og:updated_time" content="2017-11-30T08:57:30.000Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fm0du2jhnnj30810abwf1.jpg">
+<meta property="og:updated_time" content="2017-11-30T12:42:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工厂方法模式">
-<meta name="twitter:description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    public void send(String message) &amp;#123;        Syste">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg">
+<meta name="twitter:title" content="建造者模式">
+<meta name="twitter:description" content="类图 代码车类 12345678910111213141516171819202122232425262728class Car&amp;#123;    /**     * 轮胎     */    private String tire;    /**     * 发动机     */    private String engine;    public void setTire(String ti">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fm0du2jhnnj30810abwf1.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/30/factory-method/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/11/30/builder/"/>
 
 
 
 
 
-  <title>工厂方法模式 | Willvvvv’s Notes</title>
+  <title>建造者模式 | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/30/factory-method/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/30/builder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">工厂方法模式</h1>
+          <h1 class="post-title" itemprop="name headline">建造者模式</h1>
         
 
         <div class="post-meta">
@@ -294,7 +294,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T15:16:38+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T20:27:06+08:00">
                 2017-11-30
               </time>
             
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2017/11/30/factory-method/" class="leancloud_visitors" data-flag-title="工厂方法模式">
+             <span id="/2017/11/30/builder/" class="leancloud_visitors" data-flag-title="建造者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,31 +365,32 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>定义接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ISender</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现类1</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MailSenderImpl</span> <span class="keyword">implements</span> <span class="title">ISender</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"邮件发送:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现类2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmsSenderImpl</span> <span class="keyword">implements</span> <span class="title">ISender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"短信发送:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义工厂接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="function">ISender <span class="title">getSender</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>工厂实现1</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MailSenderFactoryImpl</span> <span class="keyword">implements</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ISender <span class="title">getSender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MailSenderImpl();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>工厂实现2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmsSenderFactoryImpl</span> <span class="keyword">implements</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ISender <span class="title">getSender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SmsSenderImpl();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fm0du2jhnnj30810abwf1.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>车类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 轮胎</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String tire;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 发动机</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String engine;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTire</span><span class="params">(String tire)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.tire = tire;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEngine</span><span class="params">(String engine)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.engine = engine;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Car&#123;"</span> +</span><br><span class="line">                <span class="string">"tire='"</span> + tire + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", engine='"</span> + engine + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建造接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Builder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">buildTire</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">buildEngine</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">Car <span class="title">getCar</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>奥迪建造工艺</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AudiBuilder</span> <span class="keyword">implements</span> <span class="title">Builder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Car car = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildTire</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        car.setTire(<span class="string">"米其林轮胎"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildEngine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        car.setEngine(<span class="string">"A6L 2.0L"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Car <span class="title">getCar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> car;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>宝马建造工艺</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BMWBuilder</span> <span class="keyword">implements</span> <span class="title">Builder</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Car car = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildTire</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        car.setTire(<span class="string">"马牌轮胎"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildEngine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        car.setEngine(<span class="string">"3x 1.5T"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Car <span class="title">getCar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> car;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>造车工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarFactory</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Builder builder;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CarFactory</span><span class="params">(Builder builder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.builder = builder;</span><br><span class="line">        builder.buildTire();</span><br><span class="line">        builder.buildEngine();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Builder <span class="title">getBuilder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> builder;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        String message = <span class="string">"测试内容"</span>;</span><br><span class="line"></span><br><span class="line">        ISenderFactory factory1 = <span class="keyword">new</span> SmsSenderFactoryImpl();</span><br><span class="line">        factory1.getSender().send(message);</span><br><span class="line"></span><br><span class="line">        ISenderFactory factory2 = <span class="keyword">new</span> MailSenderFactoryImpl();</span><br><span class="line">        factory2.getSender().send(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>工厂方法可以理解为，原来一个工厂是个小作坊，里面就几号人，那么造零件，造纺织品，刷漆等一系列工序都让他们做，当有一个新的职责来了，那么成本就是教会这些人去做新的事情，因为人少，所以成本低，想象一下，如果这个工厂的单子越来越多，当工厂内有新职责的时候，教学过程势必影响工厂生产，所以我们的做法就是将工厂的概念也虚化，简单来说就是成立多个工厂，有零件工厂、刷漆工厂，当有新职责来的时候就成立新的工厂，这样每个工厂的工人就只需要负责自己的职责</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>更符合开闭原则</p>
-<blockquote>
-<p>当出现新职责时,简单工厂模式需要修改工厂的判断逻辑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Builder audiBuilder = <span class="keyword">new</span> AudiBuilder();</span><br><span class="line">        Builder BMWBuilder = <span class="keyword">new</span> BMWBuilder();</span><br><span class="line"></span><br><span class="line">        CarFactory factory = <span class="keyword">new</span> CarFactory(audiBuilder);</span><br><span class="line"></span><br><span class="line">        System.out.println(factory.getBuilder().getCar());</span><br><span class="line"></span><br><span class="line">        factory = <span class="keyword">new</span> CarFactory(BMWBuilder);</span><br><span class="line"></span><br><span class="line">        System.out.println(factory.getBuilder().getCar());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote>
+<p>车 -&gt; Product</p>
+<p>AudiBuilder,BMWBuilder -&gt; ConcreteBuilder</p>
+<p>CarFactory -&gt; Director</p>
+<p>造车工厂因为是流水线作业，有固定的零件制造顺序</p>
+<p>不同厂商的制造工艺决定了其产出零件的特性</p>
 </blockquote>
-<p>单一职责原则</p>
-<blockquote>
-<p>简单工厂的职责并不单一</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
+<p>将对象的创建过程和对象本身相互隔离,使得细节依赖于抽象,符合依赖倒置原则</p>
 </blockquote>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>当新职责出现时，必须建立对应职责的工厂</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
+<p>产品组成属性必须相对固定，如有变化将改变所有建造者实现，违反开闭原则</p>
+</blockquote>
 
       
     </div>
@@ -422,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/30/factory/" rel="next" title="工厂模式">
-                <i class="fa fa-chevron-left"></i> 工厂模式
+              <a href="/2017/11/30/singleton/" rel="next" title="单例模式">
+                <i class="fa fa-chevron-left"></i> 单例模式
               </a>
             
           </div>
@@ -431,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/30/factory-abstract/" rel="prev" title="抽象工厂模式">
-                抽象工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
