@@ -4,27 +4,8 @@
 
     
   <url>
-    <loc>http://willvvvv.github.io/2017/11/30/factory-abstract/</loc>
-    <lastmod>2017-11-30T08:50:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>抽象工厂模式</title>
-        <pubTime>2017-11-30T08:05:18.000Z</pubTime>
-        
-        <tag>Pattern</tag>
-         
-        <tag>JAVA</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://willvvvv.github.io/2017/11/30/factory-method/</loc>
-    <lastmod>2017-11-30T07:31:52.000Z</lastmod>
+    <lastmod>2017-11-30T08:57:30.000Z</lastmod>
     <data>
         <display>
         <title>工厂方法模式</title>
@@ -36,14 +17,40 @@
          
          
            
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
+    <loc>http://willvvvv.github.io/2017/11/30/factory-abstract/</loc>
+    <lastmod>2017-11-30T08:57:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>抽象工厂模式</title>
+        <pubTime>2017-11-30T08:05:18.000Z</pubTime>
+        
+        <tag>Pattern</tag>
+         
+        <tag>JAVA</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://willvvvv.github.io/2017/11/30/factory/</loc>
-    <lastmod>2017-11-30T07:26:12.000Z</lastmod>
+    <lastmod>2017-11-30T08:55:26.000Z</lastmod>
     <data>
         <display>
         <title>工厂模式</title>
@@ -55,6 +62,9 @@
          
          
            
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
         </display>
     </data>
     </url>
