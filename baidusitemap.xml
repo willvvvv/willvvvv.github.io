@@ -4,8 +4,27 @@
 
     
   <url>
+    <loc>http://willvvvv.github.io/2017/11/30/factory-method/</loc>
+    <lastmod>2017-11-30T07:31:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>工厂方法模式</title>
+        <pubTime>2017-11-30T07:16:38.000Z</pubTime>
+        
+        <tag>Pattern</tag>
+         
+        <tag>JAVA</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://willvvvv.github.io/2017/11/30/factory/</loc>
-    <lastmod>2017-11-30T06:25:36.000Z</lastmod>
+    <lastmod>2017-11-30T07:26:12.000Z</lastmod>
     <data>
         <display>
         <title>工厂模式</title>

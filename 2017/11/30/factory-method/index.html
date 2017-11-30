@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Pattern,JAVA," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC">
-<meta name="keywords" content="JAVA">
+<meta name="description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    ">
+<meta name="keywords" content="Pattern,JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA内存分区">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/java-memory-partition/index.html">
+<meta property="og:title" content="工厂方法模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/11/30/factory-method/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta property="og:description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    public void send(String message) &amp;#123;        Syste">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg">
+<meta property="og:updated_time" content="2017-11-30T07:31:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA内存分区">
-<meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta name="twitter:title" content="工厂方法模式">
+<meta name="twitter:description" content="类图 代码定义接口 123interface ISender&amp;#123;    void send(String message);&amp;#125; 实现类1 1234567class MailSenderImpl implements ISender &amp;#123;    @Override    public void send(String message) &amp;#123;        Syste">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/11/30/factory-method/"/>
 
 
 
 
 
-  <title>JAVA内存分区 | Willvvvv’s Notes</title>
+  <title>工厂方法模式 | Willvvvv’s Notes</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/30/factory-method/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVA内存分区</h1>
+          <h1 class="post-title" itemprop="name headline">工厂方法模式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:34:22+08:00">
-                2017-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T15:16:38+08:00">
+                2017-11-30
               </time>
             
 
@@ -300,7 +302,7 @@
 
           
           
-             <span id="/2017/11/29/java-memory-partition/" class="leancloud_visitors" data-flag-title="JAVA内存分区">
+             <span id="/2017/11/30/factory-method/" class="leancloud_visitors" data-flag-title="工厂方法模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,22 +333,31 @@
       
 
       
-        <h2 id="Young"><a href="#Young" class="headerlink" title="Young"></a>Young</h2><h3 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h3><ol>
-<li>所有新创建的对象都在Eden区</li>
-<li>当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor</li>
-</ol>
-<h3 id="2Survivor"><a href="#2Survivor" class="headerlink" title="2Survivor"></a>2Survivor</h3><ol>
-<li>minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的</li>
-</ol>
-<h2 id="Old"><a href="#Old" class="headerlink" title="Old"></a>Old</h2><ol>
-<li>Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中</li>
-<li>如果Old区满了会触发Full GC，回收整个堆内存</li>
-</ol>
-<h2 id="Perm"><a href="#Perm" class="headerlink" title="Perm"></a>Perm</h2><ol>
-<li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
-<li>Perm区的垃圾回收也是由Full GC触发的</li>
-</ol>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm04uupnxyj30cq08w751.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>定义接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ISender</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现类1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MailSenderImpl</span> <span class="keyword">implements</span> <span class="title">ISender</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"邮件发送:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现类2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmsSenderImpl</span> <span class="keyword">implements</span> <span class="title">ISender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"短信发送:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义工厂接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="function">ISender <span class="title">getSender</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>工厂实现1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MailSenderFactoryImpl</span> <span class="keyword">implements</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ISender <span class="title">getSender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MailSenderImpl();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>工厂实现2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmsSenderFactoryImpl</span> <span class="keyword">implements</span> <span class="title">ISenderFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ISender <span class="title">getSender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SmsSenderImpl();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        String message = <span class="string">"测试内容"</span>;</span><br><span class="line"></span><br><span class="line">        ISenderFactory factory1 = <span class="keyword">new</span> SmsSenderFactoryImpl();</span><br><span class="line">        factory1.getSender().send(message);</span><br><span class="line"></span><br><span class="line">        ISenderFactory factory2 = <span class="keyword">new</span> MailSenderFactoryImpl();</span><br><span class="line">        factory2.getSender().send(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>工厂方法可以理解为，原来一个工厂是个小作坊，里面就几号人，那么造零件，造纺织品，刷漆等一系列工序都让他们做，当有一个新的职责来了，那么成本就是教会这些人去做新的事情，因为人少，所以成本低，想象一下，如果这个工厂的单子越来越多，当工厂内有新职责的时候，教学过程势必影响工厂生产，所以我们的做法就是将工厂的概念也虚化，简单来说就是成立多个工厂，有零件工厂、刷漆工厂，当有新职责来的时候就成立新的工厂，这样每个工厂的工人就只需要负责自己的职责</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>更符合开闭原则</p>
+<blockquote>
+<p>当出现新职责时,简单工厂模式需要修改工厂的判断逻辑</p>
+</blockquote>
+<p>单一职责原则</p>
+<blockquote>
+<p>简单工厂的职责并不单一</p>
+</blockquote>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>当新职责出现时，必须建立对应职责的工厂</p>
 
       
     </div>
@@ -364,6 +375,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Pattern/" rel="tag"># Pattern</a>
+          
             <a href="/tags/JAVA/" rel="tag"># JAVA</a>
           
         </div>
@@ -377,15 +390,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/30/factory/" rel="next" title="工厂模式">
+                <i class="fa fa-chevron-left"></i> 工厂模式
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/29/pattern-principle/" rel="prev" title="6大设计原则">
-                6大设计原则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -514,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">3.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">3.3.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
             
 
           </div>
