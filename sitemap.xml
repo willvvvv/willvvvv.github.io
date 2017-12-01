@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://willvvvv.github.io/2017/11/30/factory-abstract/</loc>
+    
+    <lastmod>2017-12-01T03:18:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
     
     <lastmod>2017-11-30T13:02:01.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://willvvvv.github.io/2017/11/30/factory-method/</loc>
     
     <lastmod>2017-11-30T08:57:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://willvvvv.github.io/2017/11/30/factory-abstract/</loc>
-    
-    <lastmod>2017-11-30T08:57:18.000Z</lastmod>
     
   </url>
   
