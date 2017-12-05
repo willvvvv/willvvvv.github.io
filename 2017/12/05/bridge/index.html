@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="单一职责原则一个类只负责一项职责 里式替换原则子类能够替换父类对象，而程序逻辑不变  如果逻辑不一致就另外加个方法 如果要多态，就将父类该方法改为抽象  总结：尽量不要从可实例化的父类中继承，而是要适用基于抽象类和接口的继承 依赖倒置原则高层模块不应该依赖低层模块，二者都应该依赖其抽象 例子，人读书，传入书的实现，有一">
+<meta name="description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color ">
 <meta name="keywords" content="JAVA,Pattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6大设计原则">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/pattern-principle/index.html">
+<meta property="og:title" content="桥接模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/bridge/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="单一职责原则一个类只负责一项职责 里式替换原则子类能够替换父类对象，而程序逻辑不变  如果逻辑不一致就另外加个方法 如果要多态，就将父类该方法改为抽象  总结：尽量不要从可实例化的父类中继承，而是要适用基于抽象类和接口的继承 依赖倒置原则高层模块不应该依赖低层模块，二者都应该依赖其抽象 例子，人读书，传入书的实现，有一天需求变动，读报纸，不应该不断修改人这个类，可以开放人读读物的接口，书和报纸都实">
+<meta property="og:description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color color;    public Color getColor() &amp;#123;        retu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-30T09:08:07.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg">
+<meta property="og:updated_time" content="2017-12-05T11:39:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6大设计原则">
-<meta name="twitter:description" content="单一职责原则一个类只负责一项职责 里式替换原则子类能够替换父类对象，而程序逻辑不变  如果逻辑不一致就另外加个方法 如果要多态，就将父类该方法改为抽象  总结：尽量不要从可实例化的父类中继承，而是要适用基于抽象类和接口的继承 依赖倒置原则高层模块不应该依赖低层模块，二者都应该依赖其抽象 例子，人读书，传入书的实现，有一天需求变动，读报纸，不应该不断修改人这个类，可以开放人读读物的接口，书和报纸都实">
+<meta name="twitter:title" content="桥接模式">
+<meta name="twitter:description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color color;    public Color getColor() &amp;#123;        retu">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/pattern-principle/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/bridge/"/>
 
 
 
 
 
-  <title>6大设计原则 | Willvvvv’s Notes</title>
+  <title>桥接模式 | Willvvvv’s Notes</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/pattern-principle/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/bridge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">6大设计原则</h1>
+          <h1 class="post-title" itemprop="name headline">桥接模式</h1>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:44:17+08:00">
-                2017-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T17:39:49+08:00">
+                2017-12-05
               </time>
             
 
@@ -332,7 +334,7 @@
 
           
           
-             <span id="/2017/11/29/pattern-principle/" class="leancloud_visitors" data-flag-title="6大设计原则">
+             <span id="/2017/12/05/bridge/" class="leancloud_visitors" data-flag-title="桥接模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -363,19 +365,25 @@
       
 
       
-        <h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a><strong>单一职责原则</strong></h2><p>一个类只负责一项职责</p>
-<h2 id="里式替换原则"><a href="#里式替换原则" class="headerlink" title="里式替换原则"></a><strong>里式替换原则</strong></h2><p>子类能够替换父类对象，而程序逻辑不变</p>
-<ul>
-<li>如果逻辑不一致就另外加个方法</li>
-<li>如果要多态，就将父类该方法改为抽象</li>
-</ul>
-<p><em>总结：尽量不要从可实例化的父类中继承，而是要适用基于抽象类和接口的继承</em></p>
-<h2 id="依赖倒置原则"><a href="#依赖倒置原则" class="headerlink" title="依赖倒置原则"></a><strong>依赖倒置原则</strong></h2><p>高层模块不应该依赖低层模块，二者都应该依赖其抽象</p>
-<p><em>例子，人读书，传入书的实现，有一天需求变动，读报纸，不应该不断修改人这个类，可以开放人读读物的接口，书和报纸都实现读物接口</em></p>
-<h2 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a><strong>接口隔离原则</strong></h2><p>客户端不应该依赖它不需要的接口，一个类对于另外一个类的依赖应该建立在最小接口上</p>
-<h2 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a><strong>迪米特法则</strong></h2><p>一个对象应该对其它对象保持最少的了解</p>
-<p><em>例子，父子公司，现要获取公司所有人的编号，4个对象，父公司，子公司，父员工，子员工，父公司可直接通过子公司打印员工编号，而不需要知道子员工具体信息</em></p>
-<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a><strong>开闭原则</strong></h2><p>一个软件实体如类、模块、函数应该对扩展开放，对修改关闭</p>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Color</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Color color;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Color <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blue</span> <span class="keyword">extends</span> <span class="title">Color</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"蓝色的"</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        color.paint(<span class="string">"圆形"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        color.paint(<span class="string">"正方形"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Color blue = <span class="keyword">new</span> Blue();</span><br><span class="line"></span><br><span class="line">        Shape circle = <span class="keyword">new</span> Circle();</span><br><span class="line">        Shape square = <span class="keyword">new</span> Square();</span><br><span class="line"></span><br><span class="line">        square.draw(blue);</span><br><span class="line">        circle.draw(blue);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>参考：<a href="https://www.cnblogs.com/chenssy/p/3317866.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenssy/p/3317866.html</a></p>
+<blockquote>
+<p>对于两个独立变化的维度，使用桥接模式再适合不过了。</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>桥接模式提高了系统的可扩充性，在两个变化维度中任意扩展一个维度，都不需要修改原有系统。</li>
+<li>实现细节对客户透明，可以对用户隐藏实现细节。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>需要抽出出两个独立变化的维度，所以对其使用范围有一定局限性</li>
+</ol>
 
       
     </div>
@@ -408,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/29/java-memory-partition/" rel="next" title="JAVA内存分区">
-                <i class="fa fa-chevron-left"></i> JAVA内存分区
+              <a href="/2017/12/05/deal-maven-duplicate/" rel="next" title="maven冲突处理">
+                <i class="fa fa-chevron-left"></i> maven冲突处理
               </a>
             
           </div>
@@ -418,8 +426,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/29/uml-line-desc/" rel="prev" title="uml类图简要说明">
-                uml类图简要说明 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/05/decorator/" rel="prev" title="装饰者模式">
+                装饰者模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -558,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单一职责原则"><span class="nav-number">1.</span> <span class="nav-text">单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#里式替换原则"><span class="nav-number">2.</span> <span class="nav-text">里式替换原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖倒置原则"><span class="nav-number">3.</span> <span class="nav-text">依赖倒置原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口隔离原则"><span class="nav-number">4.</span> <span class="nav-text">接口隔离原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迪米特法则"><span class="nav-number">5.</span> <span class="nav-text">迪米特法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开闭原则"><span class="nav-number">6.</span> <span class="nav-text">开闭原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">3.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">3.3.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
             
 
           </div>

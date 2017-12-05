@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
+    
+    <lastmod>2017-12-05T12:19:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/05/decorator/</loc>
+    
+    <lastmod>2017-12-05T12:19:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/05/bridge/</loc>
+    
+    <lastmod>2017-12-05T11:39:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://willvvvv.github.io/2017/12/05/deal-maven-duplicate/</loc>
     
     <lastmod>2017-12-05T09:08:59.000Z</lastmod>
@@ -19,13 +40,6 @@
     <loc>http://willvvvv.github.io/2017/12/01/adapter/</loc>
     
     <lastmod>2017-12-01T08:47:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    
-    <lastmod>2017-12-01T08:47:53.000Z</lastmod>
     
   </url>
   
