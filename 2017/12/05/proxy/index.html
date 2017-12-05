@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color ">
+<meta name="description" content="类图 代码IUserDao 相当于 Subject 123interface IUserDao &amp;#123;    void save();&amp;#125; UserDaoImpl 相当于 RealSubject 12345class UserDaoImpl implements IUserDao&amp;">
 <meta name="keywords" content="JAVA,Pattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="桥接模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/bridge/index.html">
+<meta property="og:title" content="proxy">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/proxy/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color color;    public Color getColor() &amp;#123;        retu">
+<meta property="og:description" content="类图 代码IUserDao 相当于 Subject 123interface IUserDao &amp;#123;    void save();&amp;#125; UserDaoImpl 相当于 RealSubject 12345class UserDaoImpl implements IUserDao&amp;#123;    public void save() &amp;#123;        System.out">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg">
-<meta property="og:updated_time" content="2017-12-05T11:39:13.000Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/9aaab0cfgy1fm66n4cii3j204907uaa4.jpg">
+<meta property="og:updated_time" content="2017-12-05T13:05:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="桥接模式">
-<meta name="twitter:description" content="类图 代码123abstract class Color&amp;#123;    public abstract void paint(String name);&amp;#125; 1234567891011121314abstract class Shape&amp;#123;    private Color color;    public Color getColor() &amp;#123;        retu">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg">
+<meta name="twitter:title" content="proxy">
+<meta name="twitter:description" content="类图 代码IUserDao 相当于 Subject 123interface IUserDao &amp;#123;    void save();&amp;#125; UserDaoImpl 相当于 RealSubject 12345class UserDaoImpl implements IUserDao&amp;#123;    public void save() &amp;#123;        System.out">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/9aaab0cfgy1fm66n4cii3j204907uaa4.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/bridge/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/proxy/"/>
 
 
 
 
 
-  <title>桥接模式 | Willvvvv’s Notes</title>
+  <title>proxy | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/bridge/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">桥接模式</h1>
+          <h1 class="post-title" itemprop="name headline">proxy</h1>
         
 
         <div class="post-meta">
@@ -294,7 +294,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T17:39:49+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T20:46:20+08:00">
                 2017-12-05
               </time>
             
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2017/12/05/bridge/" class="leancloud_visitors" data-flag-title="桥接模式">
+             <span id="/2017/12/05/proxy/" class="leancloud_visitors" data-flag-title="proxy">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,26 +365,27 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm615vuwpwj309b099mxl.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Color</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Color color;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Color <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blue</span> <span class="keyword">extends</span> <span class="title">Color</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"蓝色的"</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        color.paint(<span class="string">"圆形"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Color color)</span> </span>&#123;</span><br><span class="line">        color.paint(<span class="string">"正方形"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws1.sinaimg.cn/large/9aaab0cfgy1fm66n4cii3j204907uaa4.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>IUserDao 相当于 Subject</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IUserDao</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserDaoImpl 相当于 RealSubject</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title">IUserDao</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"保存用户数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserDaoProxy 相当于 Proxy</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserDaoProxy</span> <span class="keyword">implements</span> <span class="title">IUserDao</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> IUserDao userDao;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserDaoProxy</span><span class="params">(IUserDao userDao)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userDao = userDao;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"开启事务"</span>);</span><br><span class="line">        <span class="keyword">this</span>.userDao.save();</span><br><span class="line">        System.out.println(<span class="string">"结束事务"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JDK动态代理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyFactory</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//维护一个目标对象</span></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ProxyFactory</span><span class="params">(Object target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target=target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//给目标对象生成代理对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getProxyInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(</span><br><span class="line">                target.getClass().getClassLoader(),</span><br><span class="line">                target.getClass().getInterfaces(),</span><br><span class="line">                <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                        System.out.println(<span class="string">"开始事务2"</span>);</span><br><span class="line">                        <span class="comment">//执行目标对象方法</span></span><br><span class="line">                        Object returnValue = method.invoke(target, args);</span><br><span class="line">                        System.out.println(<span class="string">"提交事务2"</span>);</span><br><span class="line">                        <span class="keyword">return</span> returnValue;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Color blue = <span class="keyword">new</span> Blue();</span><br><span class="line"></span><br><span class="line">        Shape circle = <span class="keyword">new</span> Circle();</span><br><span class="line">        Shape square = <span class="keyword">new</span> Square();</span><br><span class="line"></span><br><span class="line">        square.draw(blue);</span><br><span class="line">        circle.draw(blue);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>参考：<a href="https://www.cnblogs.com/chenssy/p/3317866.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenssy/p/3317866.html</a></p>
-<blockquote>
-<p>对于两个独立变化的维度，使用桥接模式再适合不过了。</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>桥接模式提高了系统的可扩充性，在两个变化维度中任意扩展一个维度，都不需要修改原有系统。</li>
-<li>实现细节对客户透明，可以对用户隐藏实现细节。</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>需要抽出出两个独立变化的维度，所以对其使用范围有一定局限性</li>
-</ol>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        IUserDao userDao = <span class="keyword">new</span> UserDaoImpl();</span><br><span class="line"></span><br><span class="line">        IUserDao userProxy = <span class="keyword">new</span> UserDaoProxy(userDao);</span><br><span class="line"></span><br><span class="line">        userProxy.save();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 目标对象</span></span><br><span class="line">        IUserDao target = <span class="keyword">new</span> UserDaoImpl();</span><br><span class="line">        System.out.println(target.getClass());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给目标对象，创建代理对象</span></span><br><span class="line">        IUserDao proxy = (IUserDao) <span class="keyword">new</span> ProxyFactory(target).getProxyInstance();</span><br><span class="line">        System.out.println(proxy.getClass());</span><br><span class="line">        <span class="comment">// 执行方法【代理对象】</span></span><br><span class="line">        proxy.save();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">开启事务</span><br><span class="line">保存用户数据</span><br><span class="line">结束事务</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">proxy</span>.<span class="title">UserDaoImpl</span></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">proxy</span>.$<span class="title">Proxy0</span></span></span><br><span class="line"><span class="class">开始事务2</span></span><br><span class="line"><span class="class">保存用户数据</span></span><br><span class="line"><span class="class">提交事务2</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>文中描述了2种代理方式的实现</p>
+<ul>
+<li>标准代理模式的实现</li>
+<li>JDK动态代理实现(实现了接口的类生成代理)</li>
+</ul>
+<p>GBLIB动态代理(文中没写，是面向实现类的代理)</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>目标类可以更加关注业务本身</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3>
       
     </div>
     
@@ -416,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/05/deal-maven-duplicate/" rel="next" title="maven冲突处理">
-                <i class="fa fa-chevron-left"></i> maven冲突处理
+              <a href="/2017/12/05/decorator/" rel="next" title="装饰者模式">
+                <i class="fa fa-chevron-left"></i> 装饰者模式
               </a>
             
           </div>
@@ -425,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/decorator/" rel="prev" title="装饰者模式">
-                装饰者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
