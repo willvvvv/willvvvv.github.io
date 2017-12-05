@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC">
-<meta name="keywords" content="JAVA">
+<meta name="description" content="暂无">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA内存分区">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/java-memory-partition/index.html">
+<meta property="og:title" content="西安旅行攻略">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/03/travel-xian/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta property="og:description" content="暂无">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
+<meta property="og:updated_time" content="2017-12-05T09:07:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA内存分区">
-<meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta name="twitter:title" content="西安旅行攻略">
+<meta name="twitter:description" content="暂无">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/03/travel-xian/"/>
 
 
 
 
 
-  <title>JAVA内存分区 | Willvvvv’s Notes</title>
+  <title>西安旅行攻略 | Willvvvv’s Notes</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/03/travel-xian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVA内存分区</h1>
+          <h1 class="post-title" itemprop="name headline">西安旅行攻略</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:34:22+08:00">
-                2017-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T21:58:33+08:00">
+                2017-12-03
               </time>
             
 
@@ -310,7 +309,7 @@
 
           
           
-             <span id="/2017/11/29/java-memory-partition/" class="leancloud_visitors" data-flag-title="JAVA内存分区">
+             <span id="/2017/12/03/travel-xian/" class="leancloud_visitors" data-flag-title="西安旅行攻略">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,22 +340,7 @@
       
 
       
-        <h2 id="Young"><a href="#Young" class="headerlink" title="Young"></a>Young</h2><h3 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h3><ol>
-<li>所有新创建的对象都在Eden区</li>
-<li>当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor</li>
-</ol>
-<h3 id="2Survivor"><a href="#2Survivor" class="headerlink" title="2Survivor"></a>2Survivor</h3><ol>
-<li>minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的</li>
-</ol>
-<h2 id="Old"><a href="#Old" class="headerlink" title="Old"></a>Old</h2><ol>
-<li>Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中</li>
-<li>如果Old区满了会触发Full GC，回收整个堆内存</li>
-</ol>
-<h2 id="Perm"><a href="#Perm" class="headerlink" title="Perm"></a>Perm</h2><ol>
-<li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
-<li>Perm区的垃圾回收也是由Full GC触发的</li>
-</ol>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
+        <p>暂无</p>
 
       
     </div>
@@ -372,12 +356,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
-          
-        </div>
-      
 
       
       
@@ -387,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/25/best-simple-pattern/" rel="next" title="设计模式目录">
-                <i class="fa fa-chevron-left"></i> 设计模式目录
+              <a href="/2017/12/01/adapter/" rel="next" title="适配器模式">
+                <i class="fa fa-chevron-left"></i> 适配器模式
               </a>
             
           </div>
@@ -397,8 +375,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/29/pattern-principle/" rel="prev" title="6大设计原则">
-                6大设计原则 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/05/deal-maven-duplicate/" rel="prev" title="maven冲突处理">
+                maven冲突处理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -451,17 +429,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -527,22 +496,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

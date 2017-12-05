@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC">
-<meta name="keywords" content="JAVA">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JAVA内存分区">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/java-memory-partition/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Willvvvv’s Notes">
+<meta property="og:url" content="http://willvvvv.github.io/tags/Maven/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA内存分区">
-<meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta name="twitter:title" content="Willvvvv’s Notes">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/tags/Maven/"/>
 
 
 
 
 
-  <title>JAVA内存分区 | Willvvvv’s Notes</title>
+  <title>标签: Maven | Willvvvv’s Notes</title>
   
 
 
@@ -155,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,177 +244,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Maven<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="willvvvv">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/8443935?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Willvvvv’s Notes">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">JAVA内存分区</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2017/12/05/deal-maven-duplicate/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">maven冲突处理</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:34:22+08:00">
-                2017-11-29
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-05T16:51:26+08:00"
+              content="2017-12-05" >
+          12-05
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/29/java-memory-partition/" class="leancloud_visitors" data-flag-title="JAVA内存分区">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="Young"><a href="#Young" class="headerlink" title="Young"></a>Young</h2><h3 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h3><ol>
-<li>所有新创建的对象都在Eden区</li>
-<li>当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor</li>
-</ol>
-<h3 id="2Survivor"><a href="#2Survivor" class="headerlink" title="2Survivor"></a>2Survivor</h3><ol>
-<li>minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的</li>
-</ol>
-<h2 id="Old"><a href="#Old" class="headerlink" title="Old"></a>Old</h2><ol>
-<li>Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中</li>
-<li>如果Old区满了会触发Full GC，回收整个堆内存</li>
-</ol>
-<h2 id="Perm"><a href="#Perm" class="headerlink" title="Perm"></a>Perm</h2><ol>
-<li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
-<li>Perm区的垃圾回收也是由Full GC触发的</li>
-</ol>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/11/25/best-simple-pattern/" rel="next" title="设计模式目录">
-                <i class="fa fa-chevron-left"></i> 设计模式目录
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/29/pattern-principle/" rel="prev" title="6大设计原则">
-                6大设计原则 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -427,10 +299,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -451,17 +319,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -527,22 +386,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -683,10 +526,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 

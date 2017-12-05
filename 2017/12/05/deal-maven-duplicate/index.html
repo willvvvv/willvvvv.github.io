@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA," />
+  <meta name="keywords" content="Maven," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC">
-<meta name="keywords" content="JAVA">
+<meta name="description" content="命令1mvn -U dependency:tree -Dverbose |grep zkclient --color=auto -B 20 参数解释-U  该参数能强制让Maven检查所有SNAPSHOT依赖更新，确保集成基于最新的状态，如果没有该参数，Maven默认以天为单位检查更新  dependency:tree">
+<meta name="keywords" content="Maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA内存分区">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/29/java-memory-partition/index.html">
+<meta property="og:title" content="maven冲突处理">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/deal-maven-duplicate/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta property="og:description" content="命令1mvn -U dependency:tree -Dverbose |grep zkclient --color=auto -B 20 参数解释-U  该参数能强制让Maven检查所有SNAPSHOT依赖更新，确保集成基于最新的状态，如果没有该参数，Maven默认以天为单位检查更新  dependency:tree  查看依赖树  -Dverbose  可以打印出依赖树中详细的信息  |gre">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:38:00.000Z">
+<meta property="og:updated_time" content="2017-12-05T09:08:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA内存分区">
-<meta name="twitter:description" content="YoungEden 所有新创建的对象都在Eden区 当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor  2Survivor minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的  Old Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中">
+<meta name="twitter:title" content="maven冲突处理">
+<meta name="twitter:description" content="命令1mvn -U dependency:tree -Dverbose |grep zkclient --color=auto -B 20 参数解释-U  该参数能强制让Maven检查所有SNAPSHOT依赖更新，确保集成基于最新的状态，如果没有该参数，Maven默认以天为单位检查更新  dependency:tree  查看依赖树  -Dverbose  可以打印出依赖树中详细的信息  |gre">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/deal-maven-duplicate/"/>
 
 
 
 
 
-  <title>JAVA内存分区 | Willvvvv’s Notes</title>
+  <title>maven冲突处理 | Willvvvv’s Notes</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/29/java-memory-partition/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/deal-maven-duplicate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVA内存分区</h1>
+          <h1 class="post-title" itemprop="name headline">maven冲突处理</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T16:34:22+08:00">
-                2017-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T16:51:26+08:00">
+                2017-12-05
               </time>
             
 
@@ -310,7 +310,7 @@
 
           
           
-             <span id="/2017/11/29/java-memory-partition/" class="leancloud_visitors" data-flag-title="JAVA内存分区">
+             <span id="/2017/12/05/deal-maven-duplicate/" class="leancloud_visitors" data-flag-title="maven冲突处理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,22 +341,50 @@
       
 
       
-        <h2 id="Young"><a href="#Young" class="headerlink" title="Young"></a>Young</h2><h3 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h3><ol>
-<li>所有新创建的对象都在Eden区</li>
-<li>当Eden满后会触发minor GC将仍然存货的对象复制到其中一个Survivor</li>
-</ol>
-<h3 id="2Survivor"><a href="#2Survivor" class="headerlink" title="2Survivor"></a>2Survivor</h3><ol>
-<li>minor GC后，一个Survivor中存活的对象会复制到另外一个，保证其中一个Survivor始终是空的</li>
-</ol>
-<h2 id="Old"><a href="#Old" class="headerlink" title="Old"></a>Old</h2><ol>
-<li>Survivor满后触发 minor GC后仍然存活的对象会到Old中,如果Survivor中的对象足够老也会存到Old中</li>
-<li>如果Old区满了会触发Full GC，回收整个堆内存</li>
-</ol>
-<h2 id="Perm"><a href="#Perm" class="headerlink" title="Perm"></a>Perm</h2><ol>
-<li>存放的主要是类的Class对象，如果一个类被频繁的加载，也可能会导致Perm区满</li>
-<li>Perm区的垃圾回收也是由Full GC触发的</li>
-</ol>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>Sun对堆中不同代的大小也给出了建议，一半建议Young区的大小为整个堆的1/4，而Young区中Survivor区一半设置为整个Young区的1/8 </p>
+        <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -U dependency:tree -Dverbose |grep zkclient --color=auto -B <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h2 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h2><p>-U</p>
+<blockquote>
+<p>该参数能强制让Maven检查所有SNAPSHOT依赖更新，确保集成基于最新的状态，如果没有该参数，Maven默认以天为单位检查更新</p>
+</blockquote>
+<p>dependency:tree</p>
+<blockquote>
+<p>查看依赖树</p>
+</blockquote>
+<p>-Dverbose</p>
+<blockquote>
+<p>可以打印出依赖树中详细的信息</p>
+</blockquote>
+<p>|grep zkclient</p>
+<blockquote>
+<p>grep通道：查看依赖树中名字包含zkclient的数据</p>
+</blockquote>
+<p>–color=auto</p>
+<blockquote>
+<p>标红查询到的内容，方便从树中进行排查</p>
+</blockquote>
+<p>-B 20</p>
+<blockquote>
+<p>以查询到的数据行为起点向上寻找20行，能找到哪一个节点引入该包</p>
+</blockquote>
+<h2 id="实际情况分析"><a href="#实际情况分析" class="headerlink" title="实际情况分析"></a>实际情况分析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[INFO] +- org.apache.tomcat:tomcat-servlet-api:jar:<span class="number">7.0</span>.70:compile  </span><br><span class="line">[INFO] +- org.apache.tomcat:tomcat-jsp-api:jar:<span class="number">7.0</span>.70:compile  </span><br><span class="line">[INFO] |  +- org.apache.tomcat:tomcat-el-api:jar:<span class="number">7.0</span>.70:compile  </span><br><span class="line">[INFO] |  \- (org.apache.tomcat:tomcat-servlet-api:jar:<span class="number">7.0</span>.70:compile - omitted <span class="keyword">for</span> duplicate)  </span><br><span class="line">[INFO] +- net.sf.jasperreports:jasperreports:jar:<span class="number">5.6</span>.0:compile  </span><br><span class="line">[INFO] |  +- (commons-beanutils:commons-beanutils:jar:<span class="number">1.8</span>.0:compile - omitted <span class="keyword">for</span> conflict with <span class="number">1.8</span>.3)  </span><br><span class="line">[INFO] |  +- commons-collections:commons-collections:jar:<span class="number">3.2</span>.1:compile  </span><br><span class="line">[INFO] |  +- commons-digester:commons-digester:jar:<span class="number">2.1</span>:compile  </span><br><span class="line">[INFO] |  |  +- (commons-beanutils:commons-beanutils:jar:<span class="number">1.8</span>.3:compile - omitted <span class="keyword">for</span> duplicate)  </span><br><span class="line">[INFO] |  |  \- (commons-logging:commons-logging:jar:<span class="number">1.1</span>.1:compile - omitted <span class="keyword">for</span> duplicate)</span><br></pre></td></tr></table></figure>
+<p>看每一行末尾的参数，就是代表是否有冲突</p>
+<p>:compile</p>
+<blockquote>
+<p>成功编译，无冲突</p>
+</blockquote>
+<p>:compile - omitted for duplicate</p>
+<blockquote>
+<p>jar包被重复依赖，但是版本一致</p>
+</blockquote>
+<p>:compile - omitted for conflict with XXX</p>
+<blockquote>
+<p>比如上面有一行最后写着omitted for conflict with 1.8.3，那么该行的commons-beanutils:jar:1.8.0不会被引入，只有1.8.3版本的会被引入。</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>&lt;exclusions&gt; 标签</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;  </span><br><span class="line">    &lt;artifactId&gt;dubbo&lt;/artifactId&gt;  </span><br><span class="line">    &lt;version&gt;2.8.3.2&lt;/version&gt;  </span><br><span class="line">    &lt;exclusions&gt;  </span><br><span class="line">        &lt;exclusion&gt;  </span><br><span class="line">            &lt;artifactId&gt;guava&lt;/artifactId&gt;  </span><br><span class="line">            &lt;groupId&gt;com.google.guava&lt;/groupId&gt;  </span><br><span class="line">        &lt;/exclusion&gt;  </span><br><span class="line">        &lt;exclusion&gt;  </span><br><span class="line">            &lt;artifactId&gt;spring&lt;/artifactId&gt;  </span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;  </span><br><span class="line">        &lt;/exclusion&gt;    </span><br><span class="line">    &lt;/exclusions&gt;  </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例子中，引入了com.alibaba.dubbo, 排除guava和spring</p>
+</blockquote>
 
       
     </div>
@@ -374,7 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+            <a href="/tags/Maven/" rel="tag"># Maven</a>
           
         </div>
       
@@ -387,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/25/best-simple-pattern/" rel="next" title="设计模式目录">
-                <i class="fa fa-chevron-left"></i> 设计模式目录
+              <a href="/2017/12/03/travel-xian/" rel="next" title="西安旅行攻略">
+                <i class="fa fa-chevron-left"></i> 西安旅行攻略
               </a>
             
           </div>
@@ -396,10 +424,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/29/pattern-principle/" rel="prev" title="6大设计原则">
-                6大设计原则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -537,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Young"><span class="nav-number">1.</span> <span class="nav-text">Young</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eden"><span class="nav-number">1.1.</span> <span class="nav-text">Eden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Survivor"><span class="nav-number">1.2.</span> <span class="nav-text">2Survivor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old"><span class="nav-number">2.</span> <span class="nav-text">Old</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perm"><span class="nav-number">3.</span> <span class="nav-text">Perm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">4.</span> <span class="nav-text">建议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数解释"><span class="nav-number">2.</span> <span class="nav-text">参数解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际情况分析"><span class="nav-number">3.</span> <span class="nav-text">实际情况分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>
