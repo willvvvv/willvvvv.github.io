@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://willvvvv.github.io/2017/12/06/facade/</loc>
+    <lastmod>2017-12-06T05:46:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>门面模式</title>
+        <pubTime>2017-12-06T03:43:09.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
+    <lastmod>2017-12-06T03:45:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式目录</title>
+        <pubTime>2017-11-24T16:00:00.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://willvvvv.github.io/2017/11/05/what-is-pattern/</loc>
     <lastmod>2017-12-05T13:14:05.000Z</lastmod>
     <data>
@@ -28,28 +72,6 @@
         <display>
         <title>代理模式</title>
         <pubTime>2017-12-05T12:46:20.000Z</pubTime>
-        
-        <tag>JAVA</tag>
-         
-        <tag>Pattern</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    <lastmod>2017-12-05T12:40:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式目录</title>
-        <pubTime>2017-11-24T16:00:00.000Z</pubTime>
         
         <tag>JAVA</tag>
          
