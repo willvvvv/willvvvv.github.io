@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
+    
+    <lastmod>2017-12-06T13:07:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/06/observer/</loc>
+    
+    <lastmod>2017-12-06T12:57:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://willvvvv.github.io/2017/12/06/template-method/</loc>
     
     <lastmod>2017-12-06T12:37:06.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://willvvvv.github.io/2017/12/06/strategy/</loc>
     
     <lastmod>2017-12-06T09:37:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    
-    <lastmod>2017-12-06T09:33:03.000Z</lastmod>
     
   </url>
   
