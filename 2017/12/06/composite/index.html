@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void o">
+<meta name="description" content="类图 代码Component 123456789101112131415161718abstract class Component&amp;#123;    private String name;    public Component(String name) &amp;#123;        this.nam">
 <meta name="keywords" content="JAVA,Pattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="装饰者模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/decorator/index.html">
+<meta property="og:title" content="组合模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/06/composite/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void operation() &amp;#123;        System.out.println(&quot;原始操作&quot;);">
+<meta property="og:description" content="类图 代码Component 123456789101112131415161718abstract class Component&amp;#123;    private String name;    public Component(String name) &amp;#123;        this.name = name;    &amp;#125;    public String getName() &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg">
-<meta property="og:updated_time" content="2017-12-05T12:19:23.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fm70ig73wyj305n07uq32.jpg">
+<meta property="og:updated_time" content="2017-12-06T06:47:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="装饰者模式">
-<meta name="twitter:description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void operation() &amp;#123;        System.out.println(&quot;原始操作&quot;);">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg">
+<meta name="twitter:title" content="组合模式">
+<meta name="twitter:description" content="类图 代码Component 123456789101112131415161718abstract class Component&amp;#123;    private String name;    public Component(String name) &amp;#123;        this.name = name;    &amp;#125;    public String getName() &amp;">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fm70ig73wyj305n07uq32.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/decorator/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/06/composite/"/>
 
 
 
 
 
-  <title>装饰者模式 | Willvvvv’s Notes</title>
+  <title>组合模式 | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/decorator/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/06/composite/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">装饰者模式</h1>
+          <h1 class="post-title" itemprop="name headline">组合模式</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T20:07:27+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T14:17:51+08:00">
+                2017-12-06
               </time>
             
 
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2017/12/05/decorator/" class="leancloud_visitors" data-flag-title="装饰者模式">
+             <span id="/2017/12/06/composite/" class="leancloud_visitors" data-flag-title="组合模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,31 +365,24 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteComponent</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"原始操作"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Component component;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.component = component;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        component.operation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"操作前"</span>);</span><br><span class="line">        <span class="keyword">super</span>.operation();</span><br><span class="line">        System.out.println(<span class="string">"操作后"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fm70ig73wyj305n07uq32.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Component</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Component</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Leaf</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">File</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件:"</span> + <span class="keyword">this</span>.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Composite</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Folder</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;Component&gt; list = <span class="keyword">new</span> ArrayList&lt;Component&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Folder</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Component component)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.list.add(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Component component : list) &#123;</span><br><span class="line">            System.out.println(<span class="string">"文件夹:"</span> + <span class="keyword">this</span>.getName());</span><br><span class="line">            component.display();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"操作前"</span>);</span><br><span class="line">        <span class="keyword">super</span>.operation();</span><br><span class="line">        System.out.println(<span class="string">"操作后"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">操作前</span><br><span class="line">原始操作</span><br><span class="line">操作后</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>1.什么时候使用装饰者</p>
-<blockquote>
-<p>需要扩展一个类的功能，或给一个类添加附加职责</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"文件1"</span>);</span><br><span class="line">        File file2 = <span class="keyword">new</span> File(<span class="string">"文件2"</span>);</span><br><span class="line">        File file3 = <span class="keyword">new</span> File(<span class="string">"文件3"</span>);</span><br><span class="line">        Folder folder1 = <span class="keyword">new</span> Folder(<span class="string">"文件夹1"</span>);</span><br><span class="line">        Folder folder2 = <span class="keyword">new</span> Folder(<span class="string">"文件夹2"</span>);</span><br><span class="line">        Folder folder3 = <span class="keyword">new</span> Folder(<span class="string">"文件夹3"</span>);</span><br><span class="line"></span><br><span class="line">        folder1.add(folder2);</span><br><span class="line">        folder1.add(folder3);</span><br><span class="line">        folder2.add(file1);</span><br><span class="line">        folder2.add(file2);</span><br><span class="line">        folder3.add(file3);</span><br><span class="line"></span><br><span class="line">        folder1.display();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">文件夹:文件夹<span class="number">1</span></span><br><span class="line">文件夹:文件夹<span class="number">2</span></span><br><span class="line">文件:文件<span class="number">1</span></span><br><span class="line">文件夹:文件夹<span class="number">2</span></span><br><span class="line">文件:文件<span class="number">2</span></span><br><span class="line">文件夹:文件夹<span class="number">1</span></span><br><span class="line">文件夹:文件夹<span class="number">3</span></span><br><span class="line">文件:文件<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>组合模式相当于树，表明了一种整体与部分的层次结构,如例子中的系统中的文件和文件夹的体系就是组合模式的一种</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
+<p>清晰的进行层次划分，增加新构件比较容易<br>对客户端透明，客户端可以进行统一调用<br>可以忽略整体与部分的差异性，统一处理</p>
 </blockquote>
-<p>2.实际场景的使用者</p>
-<blockquote>
-<p>Java中的InputStream,FilterInputStream,BufferedInputStream大量使用了装饰者模式</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
+<p>使设计变的更加抽象，对象的业务规则如果很复杂，实现组合模式具有很大的挑战性，不过这也不能明确算是组合模式的一个缺点，大多设计模式都有此特点</p>
 </blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>相对于继承，可以提供更多的灵活性扩展类的功能</li>
-<li>通过不同的装饰方法，可以创造出很多不同行为的组合</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>会相对引入较多的子类，增加系统的复杂度</li>
-<li>装饰者模式会面对Component进行操作的，如果原系统中操作是针对ConcreteComponent的，那么将变的不适用</li>
-</ol>
 
       
     </div>
@@ -422,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/05/bridge/" rel="next" title="桥接模式">
-                <i class="fa fa-chevron-left"></i> 桥接模式
+              <a href="/2017/12/06/facade/" rel="next" title="门面模式">
+                <i class="fa fa-chevron-left"></i> 门面模式
               </a>
             
           </div>
@@ -431,10 +424,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/proxy/" rel="prev" title="代理模式">
-                代理模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
