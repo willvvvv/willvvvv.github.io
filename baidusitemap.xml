@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://willvvvv.github.io/2017/12/06/composite/</loc>
-    <lastmod>2017-12-06T06:47:59.000Z</lastmod>
+    <loc>http://willvvvv.github.io/2017/12/06/flyweight/</loc>
+    <lastmod>2017-12-06T08:36:32.000Z</lastmod>
     <data>
         <display>
-        <title>组合模式</title>
-        <pubTime>2017-12-06T06:17:51.000Z</pubTime>
+        <title>享元模式</title>
+        <pubTime>2017-12-06T08:27:09.000Z</pubTime>
         
         <tag>JAVA</tag>
          
@@ -27,11 +27,33 @@
     
   <url>
     <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    <lastmod>2017-12-06T06:18:15.000Z</lastmod>
+    <lastmod>2017-12-06T08:36:02.000Z</lastmod>
     <data>
         <display>
         <title>设计模式目录</title>
         <pubTime>2017-11-24T16:00:00.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/06/composite/</loc>
+    <lastmod>2017-12-06T06:47:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>组合模式</title>
+        <pubTime>2017-12-06T06:17:51.000Z</pubTime>
         
         <tag>JAVA</tag>
          
