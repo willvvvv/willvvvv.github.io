@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://willvvvv.github.io/2017/12/06/flyweight/</loc>
+    <loc>http://willvvvv.github.io/2017/12/06/template-method/</loc>
     
-    <lastmod>2017-12-06T08:36:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    
-    <lastmod>2017-12-06T08:36:02.000Z</lastmod>
+    <lastmod>2017-12-06T12:37:06.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://willvvvv.github.io/2017/12/06/composite/</loc>
     
-    <lastmod>2017-12-06T06:47:59.000Z</lastmod>
+    <lastmod>2017-12-06T12:30:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/06/strategy/</loc>
+    
+    <lastmod>2017-12-06T09:37:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
+    
+    <lastmod>2017-12-06T09:33:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/06/flyweight/</loc>
+    
+    <lastmod>2017-12-06T08:39:47.000Z</lastmod>
     
   </url>
   
