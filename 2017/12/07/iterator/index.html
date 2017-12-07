@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="类图 代码1.懒汉(线程不安全) 12345678910111213class Logger1 &amp;#123;    private static Logger1 instance;    private Logger1()&amp;#123;&amp;#125;    public static Logger1">
+<meta name="description" content="类图 代码1234interface Iterator&amp;#123;    Object next();    boolean hasNext();&amp;#125; 1234interface Aggregate&amp;#123;    void add(Object obj);    Iterator i">
 <meta name="keywords" content="JAVA,Pattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单例模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/30/singleton/index.html">
+<meta property="og:title" content="迭代器模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/07/iterator/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码1.懒汉(线程不安全) 12345678910111213class Logger1 &amp;#123;    private static Logger1 instance;    private Logger1()&amp;#123;&amp;#125;    public static Logger1 getInstance()&amp;#123;        if(instance == null)&amp;#12">
+<meta property="og:description" content="类图 代码1234interface Iterator&amp;#123;    Object next();    boolean hasNext();&amp;#125; 1234interface Aggregate&amp;#123;    void add(Object obj);    Iterator iterator();&amp;#125; ConcreteAggregate &amp;amp; ConcreteIte">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fm08e7g2ylj305f02jjrc.jpg">
-<meta property="og:updated_time" content="2017-11-30T09:43:20.000Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fm81otoi1rj308407u0sz.jpg">
+<meta property="og:updated_time" content="2017-12-07T03:36:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="类图 代码1.懒汉(线程不安全) 12345678910111213class Logger1 &amp;#123;    private static Logger1 instance;    private Logger1()&amp;#123;&amp;#125;    public static Logger1 getInstance()&amp;#123;        if(instance == null)&amp;#12">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fm08e7g2ylj305f02jjrc.jpg">
+<meta name="twitter:title" content="迭代器模式">
+<meta name="twitter:description" content="类图 代码1234interface Iterator&amp;#123;    Object next();    boolean hasNext();&amp;#125; 1234interface Aggregate&amp;#123;    void add(Object obj);    Iterator iterator();&amp;#125; ConcreteAggregate &amp;amp; ConcreteIte">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fm81otoi1rj308407u0sz.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/30/singleton/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/07/iterator/"/>
 
 
 
 
 
-  <title>单例模式 | Willvvvv’s Notes</title>
+  <title>迭代器模式 | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/30/singleton/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/07/iterator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单例模式</h1>
+          <h1 class="post-title" itemprop="name headline">迭代器模式</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T17:18:56+08:00">
-                2017-11-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T11:30:29+08:00">
+                2017-12-07
               </time>
             
 
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2017/11/30/singleton/" class="leancloud_visitors" data-flag-title="单例模式">
+             <span id="/2017/12/07/iterator/" class="leancloud_visitors" data-flag-title="迭代器模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,45 +365,24 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm08e7g2ylj305f02jjrc.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>1.懒汉(线程不安全)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger1 instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Logger1</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Logger1 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Logger1();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.懒汉(线程安全)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger2 instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Logger2</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Logger2 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Logger2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.饿汉</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger3</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger3 instance = <span class="keyword">new</span> Logger3();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Logger3</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Logger3 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.饿汉变种</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger4</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger4 instance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        instance = <span class="keyword">new</span> Logger4();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Logger4</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Logger4 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5.静态内部类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger5</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LoggerHolder</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger5 INSTANCE = <span class="keyword">new</span> Logger5();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Logger5</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Logger5 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> LoggerHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        Logger1 logger1 = Logger1.getInstance();</span><br><span class="line">        Logger2 logger2 = Logger2.getInstance();</span><br><span class="line">        Logger3 logger3 = Logger3.getInstance();</span><br><span class="line">        Logger4 logger4 = Logger4.getInstance();</span><br><span class="line">        Logger5 logger5 = Logger5.getInstance();</span><br><span class="line"></span><br><span class="line">        System.out.println(logger1);</span><br><span class="line">        System.out.println(logger2);</span><br><span class="line">        System.out.println(logger3);</span><br><span class="line">        System.out.println(logger4);</span><br><span class="line">        System.out.println(logger5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>参考链接：<a href="http://cantellow.iteye.com/blog/838473" target="_blank" rel="noopener">http://cantellow.iteye.com/blog/838473</a></p>
-<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>1.懒汉(线程不安全)</p>
-<blockquote>
-<p>这种写法lazy loading很明显，但是致命的是在多线程不能正常工作。</p>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fm81otoi1rj308407u0sz.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span></span>&#123;</span><br><span class="line">    <span class="function">Object <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Aggregate</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(Object obj)</span></span>;</span><br><span class="line">    <span class="function">Iterator <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ConcreteAggregate &amp; ConcreteIterator</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyArray</span> <span class="keyword">implements</span> <span class="title">Aggregate</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cursor;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object[] elements;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyArray</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cursor = <span class="number">0</span>;</span><br><span class="line">        size = <span class="number">1</span>;</span><br><span class="line">        elements = <span class="keyword">new</span> Object[size];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.elements.length &gt;= size)&#123;</span><br><span class="line">            expand();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.elements[cursor++] = obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">expand</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Object[] newElements = <span class="keyword">new</span> Object[size * <span class="number">2</span>];</span><br><span class="line">        System.arraycopy(elements, <span class="number">0</span>, newElements, <span class="number">0</span>, size);</span><br><span class="line">        elements = newElements;</span><br><span class="line">        size = size * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Iterator <span class="title">iterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyArrayIterator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">MyArrayIterator</span> <span class="keyword">implements</span> <span class="title">Iterator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> current;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyArrayIterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.current = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> MyArray.<span class="keyword">this</span>.elements[current++];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> current &lt; MyArray.<span class="keyword">this</span>.cursor;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>文中的例子实现了一个java中ArrayList的简略版</p>
+<p>迭代器模式往往与集合成对出现</p>
+<p>它很好的实现了数据结构和算法的解耦</p>
+<p>比如文中在使用MyArray集合的时候，你并不需要关心里面的存储结构是怎样的</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
+<p>符合设计原则中的单一职责原则</p>
+<p>弱化了容器类和遍历算法之间的关系</p>
 </blockquote>
-<p>2.懒汉(线程安全)</p>
-<blockquote>
-<p>线程安全,但是效率很低,99%情况下不需要同步</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
+<p>为了遍历会曾加不少代码量</p>
+<p>遍历单向切不可逆</p>
+<p>会出现ConcurrentModificationException异常(迭代过程中元素发生了变化)  </p>
 </blockquote>
-<p>3.饿汉</p>
-<blockquote>
-<p>基于classloder机制避免了多线程的同步问题，但是有可能调用Singleton的其他方法，就会被初始化，没有真正达到lazy loading的效果</p>
-</blockquote>
-<p>4.饿汉变种</p>
-<blockquote>
-<p>和第三种差不多，只不过采用静态内部类的实现方式</p>
-</blockquote>
-<p>5.静态内部类</p>
-<blockquote>
-<p>真正的lazy loading的单例实现</p>
-</blockquote>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>参考链接中还提到了其他2种实现方式，因在工作中不是特别常用，就不予以说明了</p>
-<ul>
-<li>枚举</li>
-<li>双重校验锁</li>
-</ul>
 
       
     </div>
@@ -436,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/30/factory-abstract/" rel="next" title="抽象工厂模式">
-                <i class="fa fa-chevron-left"></i> 抽象工厂模式
+              <a href="/2017/12/06/observer/" rel="next" title="观察者模式">
+                <i class="fa fa-chevron-left"></i> 观察者模式
               </a>
             
           </div>
@@ -446,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/30/builder/" rel="prev" title="建造者模式">
-                建造者模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/07/chain-of-responsibility/" rel="prev" title="责任链模式">
+                责任链模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优缺点"><span class="nav-number">3.1.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">3.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">3.3.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
             
 
           </div>
