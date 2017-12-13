@@ -5,11 +5,33 @@
     
   <url>
     <loc>http://willvvvv.github.io/2017/11/25/best-simple-pattern/</loc>
-    <lastmod>2017-12-11T08:00:27.000Z</lastmod>
+    <lastmod>2017-12-13T06:26:00.000Z</lastmod>
     <data>
         <display>
         <title>设计模式目录</title>
         <pubTime>2017-11-24T16:00:00.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Pattern</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://willvvvv.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://willvvvv.github.io/2017/12/13/state/</loc>
+    <lastmod>2017-12-13T06:25:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>状态模式</title>
+        <pubTime>2017-12-13T06:16:26.000Z</pubTime>
         
         <tag>JAVA</tag>
          
