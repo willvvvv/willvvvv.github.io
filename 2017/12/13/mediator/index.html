@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="类图 代码Stragegy 123interface Vehicle&amp;#123;    String getName();&amp;#125; ConreteStrategy1 1234567class Car implements Vehicle&amp;#123;    @Override    publi">
+<meta name="description" content="类图 代码Colleague 12345678910111213141516171819202122232425abstract class Person&amp;#123;    private String name;    private Mediator mediator;    public String g">
 <meta name="keywords" content="JAVA,Pattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="策略模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/12/06/strategy/index.html">
+<meta property="og:title" content="中介者模式">
+<meta property="og:url" content="http://willvvvv.github.io/2017/12/13/mediator/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码Stragegy 123interface Vehicle&amp;#123;    String getName();&amp;#125; ConreteStrategy1 1234567class Car implements Vehicle&amp;#123;    @Override    public String getName() &amp;#123;        return &quot;汽车&quot;;    &amp;#1">
+<meta property="og:description" content="类图 代码Colleague 12345678910111213141516171819202122232425abstract class Person&amp;#123;    private String name;    private Mediator mediator;    public String getName() &amp;#123;        return name;    &amp;#125">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fm76joof3gj30c404uglu.jpg">
-<meta property="og:updated_time" content="2017-12-06T09:37:35.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fmf7kplj84j30cv07u3yy.jpg">
+<meta property="og:updated_time" content="2017-12-18T03:40:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="策略模式">
-<meta name="twitter:description" content="类图 代码Stragegy 123interface Vehicle&amp;#123;    String getName();&amp;#125; ConreteStrategy1 1234567class Car implements Vehicle&amp;#123;    @Override    public String getName() &amp;#123;        return &quot;汽车&quot;;    &amp;#1">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fm76joof3gj30c404uglu.jpg">
+<meta name="twitter:title" content="中介者模式">
+<meta name="twitter:description" content="类图 代码Colleague 12345678910111213141516171819202122232425abstract class Person&amp;#123;    private String name;    private Mediator mediator;    public String getName() &amp;#123;        return name;    &amp;#125">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fmf7kplj84j30cv07u3yy.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/12/06/strategy/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2017/12/13/mediator/"/>
 
 
 
 
 
-  <title>策略模式 | Willvvvv’s Notes</title>
+  <title>中介者模式 | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/06/strategy/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/13/mediator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">策略模式</h1>
+          <h1 class="post-title" itemprop="name headline">中介者模式</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T17:32:31+08:00">
-                2017-12-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T16:11:27+08:00">
+                2017-12-13
               </time>
             
 
@@ -334,7 +334,7 @@
 
           
           
-             <span id="/2017/12/06/strategy/" class="leancloud_visitors" data-flag-title="策略模式">
+             <span id="/2017/12/13/mediator/" class="leancloud_visitors" data-flag-title="中介者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,24 +365,27 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fm76joof3gj30c404uglu.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Stragegy</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span></span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">getName</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ConreteStrategy1</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">implements</span> <span class="title">Vehicle</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"汽车"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ConreteStrategy2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bicycle</span> <span class="keyword">implements</span> <span class="title">Vehicle</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"自行车"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Context</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Vehicle vehicle;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Vehicle <span class="title">getVehicle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> vehicle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setVehicle</span><span class="params">(Vehicle vehicle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.vehicle = vehicle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">travel</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"开始旅行,使用交通工具:"</span> + vehicle.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmf7kplj84j30cv07u3yy.jpg" alt=""></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Colleague</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Mediator mediator;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Mediator <span class="title">getMediator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mediator;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMediator</span><span class="params">(Mediator mediator)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mediator = mediator;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, Mediator mediator)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.mediator = mediator;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ColleagueA</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HouseOwner</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HouseOwner</span><span class="params">(String name, Mediator mediator)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, mediator);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contact</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.getMediator().contact(message, <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"房主："</span> + <span class="keyword">this</span>.getName() + <span class="string">"获得信息:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ColleagueB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tenant</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Tenant</span><span class="params">(String name, Mediator mediator)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, mediator);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contact</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.getMediator().contact(message, <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"租房者："</span> + <span class="keyword">this</span>.getName() + <span class="string">"获得信息:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Mediator</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Mediator</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">contact</span><span class="params">(String message, Person person)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ConcreteMediator</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MediatorStructure</span> <span class="keyword">extends</span> <span class="title">Mediator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> HouseOwner houseOwner;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Tenant tenant;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HouseOwner <span class="title">getHouseOwner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> houseOwner;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHouseOwner</span><span class="params">(HouseOwner houseOwner)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.houseOwner = houseOwner;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Tenant <span class="title">getTenant</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> tenant;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTenant</span><span class="params">(Tenant tenant)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.tenant = tenant;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contact</span><span class="params">(String message, Person person)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(person == houseOwner)&#123;</span><br><span class="line">            tenant.getMessage(message);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            houseOwner.getMessage(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Car car = <span class="keyword">new</span> Car();</span><br><span class="line">        Bicycle bicycle = <span class="keyword">new</span> Bicycle();</span><br><span class="line"></span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setVehicle(car);</span><br><span class="line">        person.travel();</span><br><span class="line">        person.setVehicle(bicycle);</span><br><span class="line">        person.travel();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>策略模式提供了一个算法或者行为族的定义</li>
-<li>使用策略模式可以一定程度避免if-else语句</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>客户端必须知道具体算法的区别，才用选择对应的策略进行使用</li>
-</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="comment">//一个房主、一个租房者、一个中介机构</span></span><br><span class="line">        MediatorStructure mediator = <span class="keyword">new</span> MediatorStructure();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//房主和租房者只需要知道中介机构即可</span></span><br><span class="line">        HouseOwner houseOwner = <span class="keyword">new</span> HouseOwner(<span class="string">"张三"</span>, mediator);</span><br><span class="line">        Tenant tenant = <span class="keyword">new</span> Tenant(<span class="string">"李四"</span>, mediator);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//中介结构要知道房主和租房者</span></span><br><span class="line">        mediator.setHouseOwner(houseOwner);</span><br><span class="line">        mediator.setTenant(tenant);</span><br><span class="line"></span><br><span class="line">        tenant.contact(<span class="string">"听说你那里有三室的房主出租....."</span>);</span><br><span class="line">        houseOwner.contact(<span class="string">"我有房子要出租"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">房主：张三获得信息:听说你那里有三室的房主出租.....</span><br><span class="line">租房者：李四获得信息:我有房子要出租</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><blockquote>
+<p>适当地使用可以避免同事类之间的耦合</p>
+</blockquote>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><blockquote>
+<p>有些时候同事之间的关系不会复杂到网状结构，所以不要滥用中介者模式，会大幅增加系统的复杂度</p>
+</blockquote>
 
       
     </div>
@@ -415,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/06/flyweight/" rel="next" title="享元模式">
-                <i class="fa fa-chevron-left"></i> 享元模式
+              <a href="/2017/12/13/visitor/" rel="next" title="访问者模式">
+                <i class="fa fa-chevron-left"></i> 访问者模式
               </a>
             
           </div>
@@ -424,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/06/template-method/" rel="prev" title="模板方法模式">
-                模板方法模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
