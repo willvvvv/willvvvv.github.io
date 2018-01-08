@@ -82,14 +82,14 @@
 <meta name="description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gc">
+<meta property="og:title" content="垃圾回收算法">
 <meta property="og:url" content="http://willvvvv.github.io/2018/01/04/gc/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
 <meta property="og:description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，当一个对象到GC ROOT没有任何引用链相链接时，则证明对象是不可用的。 可以作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T12:57:38.000Z">
+<meta property="og:updated_time" content="2018-01-08T12:59:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gc">
+<meta name="twitter:title" content="垃圾回收算法">
 <meta name="twitter:description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，当一个对象到GC ROOT没有任何引用链相链接时，则证明对象是不可用的。 可以作">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>gc | Willvvvv’s Notes</title>
+  <title>垃圾回收算法 | Willvvvv’s Notes</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">gc</h1>
+          <h1 class="post-title" itemprop="name headline">垃圾回收算法</h1>
         
 
         <div class="post-meta">
@@ -332,7 +332,7 @@
 
           
           
-             <span id="/2018/01/04/gc/" class="leancloud_visitors" data-flag-title="gc">
+             <span id="/2018/01/04/gc/" class="leancloud_visitors" data-flag-title="垃圾回收算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,8 +450,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/06/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/08/java-garbage-collector/" rel="prev" title="垃圾收集器">
+                垃圾收集器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
