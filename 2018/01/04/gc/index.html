@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA,Pattern," />
+  <meta name="keywords" content="JAVA," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void o">
-<meta name="keywords" content="JAVA,Pattern">
+<meta name="description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，">
+<meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="装饰者模式">
-<meta property="og:url" content="http://willvvvv.github.io/2017/12/05/decorator/index.html">
+<meta property="og:title" content="gc">
+<meta property="og:url" content="http://willvvvv.github.io/2018/01/04/gc/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void operation() &amp;#123;        System.out.println(&quot;原始操作&quot;);">
+<meta property="og:description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，当一个对象到GC ROOT没有任何引用链相链接时，则证明对象是不可用的。 可以作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg">
-<meta property="og:updated_time" content="2017-12-05T12:19:23.000Z">
+<meta property="og:updated_time" content="2018-01-08T12:57:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="装饰者模式">
-<meta name="twitter:description" content="类图 代码123interface Component&amp;#123;    void operation();&amp;#125; 1234567class ConcreteComponent implements Component&amp;#123;    @Override    public void operation() &amp;#123;        System.out.println(&quot;原始操作&quot;);">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg">
+<meta name="twitter:title" content="gc">
+<meta name="twitter:description" content="垃圾回收引用计数法给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。 引用计数器法弊端：无法解决循环引用的问题 可达性分析算法通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，当一个对象到GC ROOT没有任何引用链相链接时，则证明对象是不可用的。 可以作">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/12/05/decorator/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2018/01/04/gc/"/>
 
 
 
 
 
-  <title>装饰者模式 | Willvvvv’s Notes</title>
+  <title>gc | Willvvvv’s Notes</title>
   
 
 
@@ -265,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/12/05/decorator/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2018/01/04/gc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">装饰者模式</h1>
+          <h1 class="post-title" itemprop="name headline">gc</h1>
         
 
         <div class="post-meta">
@@ -294,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T20:07:27+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T19:55:37+08:00">
+                2018-01-04
               </time>
             
 
@@ -317,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/深入理解java虚拟机读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解java虚拟机读书笔记</span>
                   </a>
                 </span>
 
@@ -334,7 +332,7 @@
 
           
           
-             <span id="/2017/12/05/decorator/" class="leancloud_visitors" data-flag-title="装饰者模式">
+             <span id="/2018/01/04/gc/" class="leancloud_visitors" data-flag-title="gc">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -365,30 +363,52 @@
       
 
       
-        <h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm65dyr6kpj308q08k0t2.jpg" alt=""></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteComponent</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"原始操作"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Component component;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.component = component;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        component.operation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"操作前"</span>);</span><br><span class="line">        <span class="keyword">super</span>.operation();</span><br><span class="line">        System.out.println(<span class="string">"操作后"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(component);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"操作前"</span>);</span><br><span class="line">        <span class="keyword">super</span>.operation();</span><br><span class="line">        System.out.println(<span class="string">"操作后"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">操作前</span><br><span class="line">原始操作</span><br><span class="line">操作后</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>1.什么时候使用装饰者</p>
-<blockquote>
-<p>需要扩展一个类的功能，或给一个类添加附加职责</p>
-</blockquote>
-<p>2.实际场景的使用者</p>
-<blockquote>
-<p>Java中的InputStream,FilterInputStream,BufferedInputStream大量使用了装饰者模式</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>相对于继承，可以提供更多的灵活性扩展类的功能</li>
-<li>通过不同的装饰方法，可以创造出很多不同行为的组合</li>
+        <h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><h3 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h3><p>给对象中添加一个引用计数器，每当有一个引用它时，计数器值就加1，当引用失效时，计数器值就减1：任何时刻计数器为0的对象就是不可能再被使用的。</p>
+<p>引用计数器法弊端：无法解决循环引用的问题</p>
+<h3 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h3><p>通过一系列的称为”GC ROOT”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称之为引用链，当一个对象到GC ROOT没有任何引用链相链接时，则证明对象是不可用的。</p>
+<p><strong>可以作为GC ROOT的有以下几种</strong></p>
+<ol>
+<li>虚拟机栈(栈帧中的本地变量表)中引用的对象</li>
+<li>方法区中类静态属性引用的对象</li>
+<li>方法区中常量引用的对象</li>
+<li>本地方法栈中JNI（即一般说的Native方法）引用的对象</li>
 </ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>会相对引入较多的子类，增加系统的复杂度</li>
-<li>装饰者模式会面对Component进行操作的，如果原系统中操作是针对ConcreteComponent的，那么将变的不适用</li>
+<h4 id="标记-清除算法"><a href="#标记-清除算法" class="headerlink" title="标记-清除算法"></a>标记-清除算法</h4><p>如同名字一样，该垃圾回收算法分为两个阶段：首先标记出所有要回收的对象，在标记完成后统一回收被标记的对象，后续的所收集算法都是基于这种思路并对其不足进行改进而得到的</p>
+<p><strong>它有两个不足之处</strong></p>
+<ol>
+<li>标记和清清除两个过程的效率都不高</li>
+<li>另一个是空间问题，标记清除之后会产生大量不连续的内存碎片，内存碎片过多可能会导致在程序后续运行过程中分配大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集</li>
+</ol>
+<h4 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h4><p>为了解决内存碎片和效率的问题，它将内存按容量划分为大小相等的两块，每次只使用其中的一块，当这一块内存用完了，就将还存活的对象复制到另一块上面，然后把已使用过的内存空间一次性清理掉。</p>
+<p><strong>优势:</strong></p>
+<ol>
+<li>每次都是对整块内存进行回收，不用考虑碎片情况，只需要将指针按顺序分配内存即可，实现简单、运行高效</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>内存缩小为了原来的一半</li>
+</ol>
+<p>现在商业虚拟机都采用这种收集算法来回收新生代，因为IBM公司的专项研究表明，新生代中98%的对象都是”朝生夕死”，所以并不需要按照1：1的比例来划分内存空间。</p>
+<p>所以新生代内存按照8:2方式被划分为Eden(80%),Survivor 0(10%),Survivor 1(10%)</p>
+<h5 id="分配担保"><a href="#分配担保" class="headerlink" title="分配担保"></a>分配担保</h5><p>这时候会产生一个问题,如果第一次垃圾回收触发时,Eden存活下来的对象比较多，Survivor 0塞不下了怎么办？</p>
+<blockquote>
+<p>会发生一次分配担保，依赖其他内存（这里指老年代）</p>
+<p>分配担保好比去银行借款，如果我们信誉良好，在98%的情况下都能按时偿还，于是银行可能会默认我们下一次也能按时按量进行偿还，只需要有一个担保人能保证我们不能还款时，可以从他的账户扣款，那么银行就认为没有风险。</p>
+</blockquote>
+<h5 id="为什么需要两块Survivor"><a href="#为什么需要两块Survivor" class="headerlink" title="为什么需要两块Survivor"></a>为什么需要两块Survivor</h5><p>假设只有一块Survivor会发生什么问题呢？</p>
+<p>当发生第一次垃圾回收，Eden区往Survivor 0进行复制的时候，没有什么问题，但是当第二次时，因为原来Survivor中已经存在使用过的空间，再往里塞，会存在内存碎片需要处理，增加了耗时，所以，复制算法保证了S1中来自S0和Eden两部分的存活对象占用连续的内存空间，避免了碎片化的发生。</p>
+<p>S0和Eden被清空，然后下一轮S0与S1交换角色，如此循环往复。如果对象的复制次数达到16次，该对象就会被送到老年代中</p>
+<p>具体参考： <a href="http://blog.csdn.net/antony9118/article/details/51425581" target="_blank" rel="noopener">http://blog.csdn.net/antony9118/article/details/51425581</a></p>
+<h4 id="标记-整理算法"><a href="#标记-整理算法" class="headerlink" title="标记-整理算法"></a>标记-整理算法</h4><ol>
+<li>复制收集算法在对象存活率较高时就要进行较多的复制操作，效率将变低</li>
+<li>如果不想浪费50%的空间，Survivor就会需要分配担保</li>
+</ol>
+<p>如果被使用的内存中对象都100%存活的极端情况，所以在老年代中一般不能使用复制算法</p>
+<p>老年代一般使用标记-整理算法，与标记清除算法的区别是，第一次标记后，让所有存活的对象都向一端移动，然后直接清理掉边界以外的内存</p>
+<h4 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h4><p>将对象存活周期的不同将内存划分为几块，一般把java堆分为新生代和老年代。这样就可以根据各个代的特点采用最适当的收集算法</p>
+<ol>
+<li>在新生代，每次垃圾收集时都会有大量对象死去，少量存活，就选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集</li>
+<li>在老年代，因为对象存活率高，没有额外空间对它进行分配担保，就必须使用标记清除或是标记整理算法来进行回收</li>
 </ol>
 
       
@@ -409,8 +429,6 @@
           
             <a href="/tags/JAVA/" rel="tag"># JAVA</a>
           
-            <a href="/tags/Pattern/" rel="tag"># Pattern</a>
-          
         </div>
       
 
@@ -422,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/05/bridge/" rel="next" title="桥接模式">
-                <i class="fa fa-chevron-left"></i> 桥接模式
+              <a href="/2018/01/03/java-memory/" rel="next" title="JAVA内存规划">
+                <i class="fa fa-chevron-left"></i> JAVA内存规划
               </a>
             
           </div>
@@ -432,8 +450,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/05/proxy/" rel="prev" title="代理模式">
-                代理模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/06/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -572,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">3.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">3.3.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收"><span class="nav-number">1.</span> <span class="nav-text">垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用计数法"><span class="nav-number">1.1.</span> <span class="nav-text">引用计数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可达性分析算法"><span class="nav-number">1.2.</span> <span class="nav-text">可达性分析算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标记-清除算法"><span class="nav-number">1.2.1.</span> <span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">复制算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分配担保"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">分配担保</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么需要两块Survivor"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">为什么需要两块Survivor</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记-整理算法"><span class="nav-number">1.2.3.</span> <span class="nav-text">标记-整理算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分代收集算法"><span class="nav-number">1.2.4.</span> <span class="nav-text">分代收集算法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

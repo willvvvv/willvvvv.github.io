@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Willvvvv’s Notes">
-<meta property="og:url" content="http://willvvvv.github.io/archives/2017/12/index.html">
+<meta name="description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾收集器">
+<meta property="og:url" content="http://willvvvv.github.io/2018/01/08/java-garbage-collector/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
+<meta property="og:description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-08T12:31:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Willvvvv’s Notes">
+<meta name="twitter:title" content="垃圾收集器">
+<meta name="twitter:description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/archives/2017/12/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2018/01/08/java-garbage-collector/"/>
 
 
 
 
 
-  <title>归档 | Willvvvv’s Notes</title>
+  <title>垃圾收集器 | Willvvvv’s Notes</title>
   
 
 
@@ -150,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,410 +249,212 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 36 篇日志。 继续努力。
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2018/01/08/java-garbage-collector/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="willvvvv">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/8443935?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Willvvvv’s Notes">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">垃圾收集器</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T17:48:17+08:00">
+                2018-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/27/what-is-RB-Tree/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">what-is-RB-Tree</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/深入理解java虚拟机读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解java虚拟机读书笔记</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-27T15:44:25+08:00"
-              content="2017-12-27" >
-          12-27
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
+             <span id="/2018/01/08/java-garbage-collector/" class="leancloud_visitors" data-flag-title="垃圾收集器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/18/interpreter/" itemprop="url">
-              
-                <span itemprop="name">解释器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T14:04:28+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/13/mediator/" itemprop="url">
-              
-                <span itemprop="name">中介者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-13T16:11:27+08:00"
-              content="2017-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器</p>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
+<li>简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率</li>
+<li>对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，只要不是频繁发生，都是可接受的，所以该收集器在Client模式下是很好的选择</li>
+</ol>
+<h3 id="ParNew收集器"><a href="#ParNew收集器" class="headerlink" title="ParNew收集器"></a>ParNew收集器</h3><p>Serial收集器的多线程版本，除了使用多线程之外,其余所有控制参数、收集算法、回收策略都与Serial收集器完全一样,属于新生代收集器</p>
+<ol>
+<li>许多运行在Server模式下的虚拟机中首选的新生代收集器，除了Serial收集器，目前只有它能和CMS收集器配合工作</li>
+</ol>
+<h3 id="Parallel-Scavenge收集器"><a href="#Parallel-Scavenge收集器" class="headerlink" title="Parallel Scavenge收集器"></a>Parallel Scavenge收集器</h3><p>Parallel Scavenge收集器也是作用于新生代，与其他新生代全部类似，区别在于其目的是达到一个可控制的吞吐量.</p>
+<p><strong>吞吐量=运行用户代码时间/(运行用户代码时间+垃圾收集时间)</strong></p>
+<p><em>虚拟机总共运行了100分钟，其中垃圾收集花掉1分钟，那吞吐量就是99%</em></p>
+<h4 id="优势："><a href="#优势：" class="headerlink" title="优势："></a>优势：</h4><p>停顿时间越短约适合需要与用户交互的程序，而高吞吐量则可以高效率地利用CPU时间，尽快完成程序的运算任务，主要适合在后台运算而不需要太多交互的任务</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>Parallel Scavenge收集器提供了两个参数用于精确控制吞吐量，通常被称为”吞吐量优先”收集器</p>
+<p><strong>控制最大垃圾收集停顿时间</strong></p>
+<pre><code>-XX:MaxGCPauseMillis
+</code></pre><blockquote>
+<p>MaxGCPauseMillis参数允许的值是一个大于0的毫秒数，收集器将尽可能地保证内存会受花费的时间不超过设定值,但是不是说越小越好，GC停顿时间缩短是以牺牲吞吐量和新生代空间来换取的：系统把新生代调小一些，收集300MB新生代肯定比500MB快，这也直接导致垃圾收集更加频繁，原来10秒收集一次、每次停顿100毫秒，现在变成5秒收集一次，每次停顿70毫秒。停顿时间的确下降了，但是吞吐量也降低了。</p>
+</blockquote>
+<p><strong>直接设置吞吐量大小</strong></p>
+<pre><code>-XX:GCTimeRatio
+</code></pre><blockquote>
+<p>大于0小于100的整数，也就是垃圾收集时间占总时间的比率，相当于吞吐量的导数</p>
+<p>如果把此参数设置为19，允许最大的GC时间就占总时间的5%（即1/(1+19)），默认为99，就是允许最大1%的垃圾收集时间</p>
+</blockquote>
+<p><strong>自适应调节策略</strong></p>
+<pre><code>-XX:UseAdaptiveSizePolicy
+</code></pre><blockquote>
+<p>这是一个开关参数，当打开滞后，就不需要指定新生代的大小(-Xmn)、Eden与Survivor区的比例(-XX:SurvivorRatio)、晋升老年代对象年龄(-XX:PreternureSizeThreshold)等细节参数了.</p>
+<p>系统会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大吞吐量。</p>
+<p>如果对收集器运行原理不太了解，这是个不错的选择，只要设置好最大堆(-Xmx)，然后选择关注最大停顿时间还是关注吞吐量，给虚拟机设立一个优化目标，那么具体细节参数的调节工作就交由虚拟机完成了</p>
+</blockquote>
+<h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>是Serial收集器的老年代版本，同样是一个单线程收集器，使用”标记-整理算法”</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/13/visitor/" itemprop="url">
-              
-                <span itemprop="name">访问者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-13T15:33:39+08:00"
-              content="2017-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/13/state/" itemprop="url">
-              
-                <span itemprop="name">状态模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-13T14:16:26+08:00"
-              content="2017-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/11/mementor/" itemprop="url">
-              
-                <span itemprop="name">备忘录模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-11T15:53:10+08:00"
-              content="2017-12-11" >
-          12-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/07/command/" itemprop="url">
-              
-                <span itemprop="name">命令模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T16:46:53+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/07/chain-of-responsibility/" itemprop="url">
-              
-                <span itemprop="name">责任链模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T14:37:46+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/07/iterator/" itemprop="url">
-              
-                <span itemprop="name">迭代器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T11:30:29+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/06/observer/" itemprop="url">
-              
-                <span itemprop="name">观察者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-06T20:47:00+08:00"
-              content="2017-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/06/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/12/page/2/">2</a><a class="page-number" href="/archives/2017/12/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/12/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -655,6 +462,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -675,8 +486,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -742,6 +562,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-number">1.</span> <span class="nav-text">垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial收集器"><span class="nav-number">1.1.</span> <span class="nav-text">Serial收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.1.1.</span> <span class="nav-text">优点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParNew收集器"><span class="nav-number">1.2.</span> <span class="nav-text">ParNew收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parallel-Scavenge收集器"><span class="nav-number">1.3.</span> <span class="nav-text">Parallel Scavenge收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优势："><span class="nav-number">1.3.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.3.2.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-Old收集器"><span class="nav-number">1.4.</span> <span class="nav-text">Serial Old收集器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -882,6 +718,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
