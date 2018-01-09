@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，">
+<meta name="description" content="垃圾收集器并行(Parallel)：指多条垃圾收集线程并行工作，但此时用户线程扔然处于等待状态。 并发(Concurrent)：指用户线程与垃圾收集线程同时执行，但不一定是并行，可能会交替执行） Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垃圾收集器">
 <meta property="og:url" content="http://willvvvv.github.io/2018/01/08/java-garbage-collector/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，">
+<meta property="og:description" content="垃圾收集器并行(Parallel)：指多条垃圾收集线程并行工作，但此时用户线程扔然处于等待状态。 并发(Concurrent)：指用户线程与垃圾收集线程同时执行，但不一定是并行，可能会交替执行） Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T12:31:29.000Z">
+<meta property="og:updated_time" content="2018-01-09T09:15:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="垃圾收集器">
-<meta name="twitter:description" content="垃圾收集器Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率 对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，">
+<meta name="twitter:description" content="垃圾收集器并行(Parallel)：指多条垃圾收集线程并行工作，但此时用户线程扔然处于等待状态。 并发(Concurrent)：指用户线程与垃圾收集线程同时执行，但不一定是并行，可能会交替执行） Serial收集器单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器 优点： 简单高效(与其他收集器的单线程比),没有线程交互的开">
 
 
 
@@ -363,7 +363,9 @@
       
 
       
-        <h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器</p>
+        <h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><p>并行(Parallel)：指多条垃圾收集线程并行工作，但此时用户线程扔然处于等待状态。</p>
+<p>并发(Concurrent)：指用户线程与垃圾收集线程同时执行，但不一定是并行，可能会交替执行）</p>
+<h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>单线程收集器，在进行垃圾收集时，会暂停其他所有的工作线程，直到它收集结束，”Stop The World”,属于新生代收集器</p>
 <h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
 <li>简单高效(与其他收集器的单线程比),没有线程交互的开销，专心做垃圾收集，获得最高的单线程收集效率</li>
 <li>对于用户的桌面应用场景,分配给虚拟机的内存一般来说不会很大，收集几十兆甚至一两百兆的新生代，停顿时间完全可以控制在几十毫秒最多一百毫秒以内，只要不是频繁发生，都是可接受的，所以该收集器在Client模式下是很好的选择</li>
@@ -395,7 +397,42 @@
 <p>系统会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大吞吐量。</p>
 <p>如果对收集器运行原理不太了解，这是个不错的选择，只要设置好最大堆(-Xmx)，然后选择关注最大停顿时间还是关注吞吐量，给虚拟机设立一个优化目标，那么具体细节参数的调节工作就交由虚拟机完成了</p>
 </blockquote>
-<h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>是Serial收集器的老年代版本，同样是一个单线程收集器，使用”标记-整理算法”</p>
+<h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>是Serial收集器的老年代版本，同样是一个单线程收集器，使用”标记-整理算法”，这个收集器的主要意义也是在于给Client模式下的虚拟机使用,如果在Server模式下，它主要还有两大用途</p>
+<ol>
+<li>JDK1.5以及之前的版本中与Parallel Scavenge收集器配合使用</li>
+<li>作为CMS收集器的后备预案,在并发收集发生Concurrent Mode Failure时使用</li>
+</ol>
+<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><p>是Parallel Scavenge收集器的老年代版本,使用多线程和”标记-整理”算法, 这个收集器在JDK1.6中才开始提供，在注重吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge加Parallel Old收集器</p>
+<h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><p>CMS(Concurrent Mark Sweep)收集器是一种以获取最短回收停顿时间为目标的收集器，基于”标记-清除”算法实现，它的整个过程分为4个步骤，包括：</p>
+<ol>
+<li>初始标记(CMS initial mark)</li>
+<li>并发标记(CMS concurrent mark)</li>
+<li>重新标记(CMS remark)</li>
+<li>并发清除(CMS)</li>
+</ol>
+<p>其中，初始标记、重新标记两个步骤仍然需要 Stop the World。初始标记仅仅只是标记一下GC ROOTS能关联到的对象，速度很快，并发标记就是进行GC ROOTS Tracing的过程,而重新标记则是为了修正并发标记期间因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间比初始标记长，远短于并发标记</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h4><ol>
+<li>并发设计对CPU非常敏感,会因为一部分线程的占用导致应用程序变慢,总吞吐量降低</li>
+<li>无法处理浮动垃圾,可能会出现”Concurrent Mode Failure”失败而导致另一次Full GC的产生</li>
+<li>由于CMS属于标记-清除算法，这意味着收集结束时会有大量空间碎片产生</li>
+</ol>
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><pre><code>-XX:+UseCMSCompactAtFullCollection
+</code></pre><blockquote>
+<p>开关参数，默认开启，用于在CMS收集器顶不住要进行Full GC时开启内存碎片的合并整理过程,内存整理的过程是无法并发的，内存碎片问题没有了，但是停顿时间不得不变长，因此有下面的参数</p>
+</blockquote>
+<pre><code>-XX:CMSFullGCsBeforeCompaction
+</code></pre><blockquote>
+<p>这个参数用于设置执行多少次不压缩的Full GC后，跟着来一次带压缩的，默认值0，表示每一次进行Full GC时都进行碎片整理</p>
+</blockquote>
+<h3 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h3><p>JDK 1.7中新引入的垃圾收集器，可以用来替代CMS,与其他垃圾收集器相比，G1具备如下特点</p>
+<ol>
+<li>并行与并发： 能充分利用多CPU、多核环境下的硬件优势，来缩短Stop-The-World停顿的时间</li>
+<li>分代收集：虽然G1可以不需要其他收集器配合就能独立管理整个GC堆，但它能够采用不同的方式去处理新创建的对象和已经存活了一段时间的旧对象以获取更好的收集效果。</li>
+<li>空间整合：与CMS的标记清理算法不同，G1从整体上看来是基于标记整理算法实现的收集器，从局部上来看（两个Region之间）是基于复制算法实现的，但是这都意味着G1运作期间不会产生</li>
+<li>可预测的停顿：这是G1相对于CMS的灵一大优势，G1除了追求低停顿外，还能建立可预测的停顿时间模型，能让使用者明确指定在一个长度为M毫秒的时间片段内，消耗在垃圾收集上的时间不得超过N毫秒</li>
+</ol>
+<p>在G1之前其他收集器进行收集的范围都是整个新生代或者老年代，而使用G1收集器时，整个内存就被划分为多个大小相等的独立区域（Region），虽然还保留着新生代和老年代的概念，但是不再是物理隔离的了，它们都是一部分Region(不需要连续)的集合</p>
+<p>G1收集器之所以能建立可预测的停顿时间模型，是因为G1根本各个Region里面的垃圾堆积的价值大小(回收所获得的空间大小以及回收所需时间)，在后台维护一个优先列表，每次优先回收价值最大的Region，这也是Garbage-First的由来</p>
 
       
     </div>
@@ -572,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-number">1.</span> <span class="nav-text">垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial收集器"><span class="nav-number">1.1.</span> <span class="nav-text">Serial收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.1.1.</span> <span class="nav-text">优点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParNew收集器"><span class="nav-number">1.2.</span> <span class="nav-text">ParNew收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parallel-Scavenge收集器"><span class="nav-number">1.3.</span> <span class="nav-text">Parallel Scavenge收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优势："><span class="nav-number">1.3.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.3.2.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-Old收集器"><span class="nav-number">1.4.</span> <span class="nav-text">Serial Old收集器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-number">1.</span> <span class="nav-text">垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial收集器"><span class="nav-number">1.1.</span> <span class="nav-text">Serial收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.1.1.</span> <span class="nav-text">优点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParNew收集器"><span class="nav-number">1.2.</span> <span class="nav-text">ParNew收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parallel-Scavenge收集器"><span class="nav-number">1.3.</span> <span class="nav-text">Parallel Scavenge收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优势："><span class="nav-number">1.3.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.3.2.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-Old收集器"><span class="nav-number">1.4.</span> <span class="nav-text">Serial Old收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parallel-Old收集器"><span class="nav-number">1.5.</span> <span class="nav-text">Parallel Old收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMS收集器"><span class="nav-number">1.6.</span> <span class="nav-text">CMS收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">1.6.1.</span> <span class="nav-text">缺点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数-1"><span class="nav-number">1.6.2.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1收集器"><span class="nav-number">1.7.</span> <span class="nav-text">G1收集器</span></a></li></ol></li></ol></div>
             
 
           </div>

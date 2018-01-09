@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://willvvvv.github.io/2018/01/04/gc/</loc>
-    <lastmod>2018-01-08T12:59:14.000Z</lastmod>
+    <loc>http://willvvvv.github.io/2018/01/08/java-garbage-collector/</loc>
+    <lastmod>2018-01-09T09:15:18.000Z</lastmod>
     <data>
         <display>
-        <title>垃圾回收算法</title>
-        <pubTime>2018-01-04T11:55:37.000Z</pubTime>
+        <title>垃圾收集器</title>
+        <pubTime>2018-01-08T09:48:17.000Z</pubTime>
         
         <tag>JAVA</tag>
          
@@ -24,12 +24,12 @@
 
     
   <url>
-    <loc>http://willvvvv.github.io/2018/01/08/java-garbage-collector/</loc>
-    <lastmod>2018-01-08T12:31:29.000Z</lastmod>
+    <loc>http://willvvvv.github.io/2018/01/04/gc/</loc>
+    <lastmod>2018-01-08T12:59:14.000Z</lastmod>
     <data>
         <display>
-        <title>垃圾收集器</title>
-        <pubTime>2018-01-08T09:48:17.000Z</pubTime>
+        <title>垃圾回收算法</title>
+        <pubTime>2018-01-04T11:55:37.000Z</pubTime>
         
         <tag>JAVA</tag>
          
