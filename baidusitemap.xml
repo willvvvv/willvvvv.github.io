@@ -4,8 +4,45 @@
 
     
   <url>
+    <loc>http://willvvvv.github.io/2018/01/22/netty-bytebuf/</loc>
+    <lastmod>2018-01-22T06:21:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>什么是ByteBuf</title>
+        <pubTime>2018-01-22T05:57:17.000Z</pubTime>
+        
+        <tag>Netty</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://willvvvv.github.io/2018/01/04/gc/</loc>
+    <lastmod>2018-01-18T05:40:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>垃圾回收算法</title>
+        <pubTime>2018-01-04T11:55:37.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+         
+           
+             
+              <breadCrumb title="深入理解java虚拟机读书笔记" url="http://willvvvv.github.io/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://willvvvv.github.io/2018/01/16/thread-status/</loc>
-    <lastmod>2018-01-16T06:31:05.000Z</lastmod>
+    <lastmod>2018-01-16T08:35:50.000Z</lastmod>
     <data>
         <display>
         <title>JAVA线程状态</title>
@@ -30,26 +67,6 @@
         <display>
         <title>垃圾收集器</title>
         <pubTime>2018-01-08T09:48:17.000Z</pubTime>
-        
-        <tag>JAVA</tag>
-         
-         
-           
-             
-              <breadCrumb title="深入理解java虚拟机读书笔记" url="http://willvvvv.github.io/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3java%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://willvvvv.github.io/2018/01/04/gc/</loc>
-    <lastmod>2018-01-08T12:59:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>垃圾回收算法</title>
-        <pubTime>2018-01-04T11:55:37.000Z</pubTime>
         
         <tag>JAVA</tag>
          
