@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://willvvvv.github.io/2018/11/20/micrometer-histogram/</loc>
+    
+    <lastmod>2018-11-20T11:39:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://willvvvv.github.io/2018/02/26/thread-poll/</loc>
     
     <lastmod>2018-02-26T09:16:57.000Z</lastmod>

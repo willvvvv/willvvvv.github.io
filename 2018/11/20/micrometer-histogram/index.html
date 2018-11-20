@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JAVA,Pattern," />
+  <meta name="keywords" content="micrometer,监控," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="设计原则设计模式创建型工厂 工厂模式并不在23种设计模式之列,只是为后面的2个工厂模式铺个路  工厂方法抽象工厂单例建造者原型结构型适配器桥接装饰者 动态地给一个对象添加一些额外的职责  代理 为其它对象提供一种代理以控制对这个对象的访问。 从语意上讲，代理模式的目标是控制对被代理对象的访问，而装饰模式是给原对象增加额">
-<meta name="keywords" content="JAVA,Pattern">
+<meta name="description" content="##直方图和百分位## Timer 和 Distribution summaries 支持收集数据用于展示它们的百分位分布, 有两种主要的方法用于浏览百分位  Percentitle histogram - Micrometer 会累积直方图的基础值,并且将准备好的一系列bucket运送往监控系统, 监控系统的查询语句">
+<meta name="keywords" content="micrometer,监控">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式目录">
-<meta property="og:url" content="http://willvvvv.github.io/2017/11/25/best-simple-pattern/index.html">
+<meta property="og:title" content="micrometer_histogram">
+<meta property="og:url" content="http://willvvvv.github.io/2018/11/20/micrometer-histogram/index.html">
 <meta property="og:site_name" content="Willvvvv’s Notes">
-<meta property="og:description" content="设计原则设计模式创建型工厂 工厂模式并不在23种设计模式之列,只是为后面的2个工厂模式铺个路  工厂方法抽象工厂单例建造者原型结构型适配器桥接装饰者 动态地给一个对象添加一些额外的职责  代理 为其它对象提供一种代理以控制对这个对象的访问。 从语意上讲，代理模式的目标是控制对被代理对象的访问，而装饰模式是给原对象增加额外功能。  门面组合享元行为型策略模板方法观察者迭代器责任链命令备忘录状态访问者">
+<meta property="og:description" content="##直方图和百分位## Timer 和 Distribution summaries 支持收集数据用于展示它们的百分位分布, 有两种主要的方法用于浏览百分位  Percentitle histogram - Micrometer 会累积直方图的基础值,并且将准备好的一系列bucket运送往监控系统, 监控系统的查询语句可以从该柱状图中计算出百分位.现在, 只有Promethues和Atlas支持基">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T06:27:44.000Z">
+<meta property="og:updated_time" content="2018-11-20T11:39:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式目录">
-<meta name="twitter:description" content="设计原则设计模式创建型工厂 工厂模式并不在23种设计模式之列,只是为后面的2个工厂模式铺个路  工厂方法抽象工厂单例建造者原型结构型适配器桥接装饰者 动态地给一个对象添加一些额外的职责  代理 为其它对象提供一种代理以控制对这个对象的访问。 从语意上讲，代理模式的目标是控制对被代理对象的访问，而装饰模式是给原对象增加额外功能。  门面组合享元行为型策略模板方法观察者迭代器责任链命令备忘录状态访问者">
+<meta name="twitter:title" content="micrometer_histogram">
+<meta name="twitter:description" content="##直方图和百分位## Timer 和 Distribution summaries 支持收集数据用于展示它们的百分位分布, 有两种主要的方法用于浏览百分位  Percentitle histogram - Micrometer 会累积直方图的基础值,并且将准备好的一系列bucket运送往监控系统, 监控系统的查询语句可以从该柱状图中计算出百分位.现在, 只有Promethues和Atlas支持基">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://willvvvv.github.io/2017/11/25/best-simple-pattern/"/>
+  <link rel="canonical" href="http://willvvvv.github.io/2018/11/20/micrometer-histogram/"/>
 
 
 
 
 
-  <title>设计模式目录 | Willvvvv’s Notes</title>
+  <title>micrometer_histogram | Willvvvv’s Notes</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2017/11/25/best-simple-pattern/">
+    <link itemprop="mainEntityOfPage" href="http://willvvvv.github.io/2018/11/20/micrometer-histogram/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willvvvv">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式目录</h1>
+          <h1 class="post-title" itemprop="name headline">micrometer_histogram</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T00:00:00+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T15:09:36+08:00">
+                2018-11-20
               </time>
             
 
@@ -303,28 +303,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -332,7 +310,7 @@
 
           
           
-             <span id="/2017/11/25/best-simple-pattern/" class="leancloud_visitors" data-flag-title="设计模式目录">
+             <span id="/2018/11/20/micrometer-histogram/" class="leancloud_visitors" data-flag-title="micrometer_histogram">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -363,17 +341,31 @@
       
 
       
-        <h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a><a href="/2017/11/29/pattern-principle/">设计原则</a></h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h3><h4 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a><a href="/2017/11/30/factory/index.html">工厂</a></h4><blockquote>
-<p>工厂模式并不在23种设计模式之列,只是为后面的2个工厂模式铺个路</p>
-</blockquote>
-<h4 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a><a href="/2017/11/30/factory-method/index.html">工厂方法</a></h4><h4 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a><a href="/2017/11/30/factory-abstract/index.html">抽象工厂</a></h4><h4 id="单例"><a href="#单例" class="headerlink" title="单例"></a><a href="/2017/11/30/singleton/index.html">单例</a></h4><h4 id="建造者"><a href="#建造者" class="headerlink" title="建造者"></a><a href="/2017/11/30/builder/index.html">建造者</a></h4><h4 id="原型"><a href="#原型" class="headerlink" title="原型"></a><a href="/2017/12/01/prototype/index.html">原型</a></h4><h3 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h3><h4 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a><a href="/2017/12/01/adapter/index.html">适配器</a></h4><h4 id="桥接"><a href="#桥接" class="headerlink" title="桥接"></a><a href="/2017/12/05/bridge/index.html">桥接</a></h4><h4 id="装饰者"><a href="#装饰者" class="headerlink" title="装饰者"></a><a href="/2017/12/05/decorator/index.html">装饰者</a></h4><blockquote>
-<p>动态地给一个对象添加一些额外的职责</p>
-</blockquote>
-<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a><a href="/2017/12/05/proxy/index.html">代理</a></h4><blockquote>
-<p>为其它对象提供一种代理以控制对这个对象的访问。</p>
-<p>从语意上讲，代理模式的目标是控制对被代理对象的访问，而装饰模式是给原对象增加额外功能。</p>
-</blockquote>
-<h4 id="门面"><a href="#门面" class="headerlink" title="门面"></a><a href="/2017/12/06/facade/index.html">门面</a></h4><h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a><a href="/2017/12/06/composite/index.html">组合</a></h4><h4 id="享元"><a href="#享元" class="headerlink" title="享元"></a><a href="/2017/12/06/flyweight/index.html">享元</a></h4><h3 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h3><h4 id="策略"><a href="#策略" class="headerlink" title="策略"></a><a href="/2017/12/06/strategy/index.html">策略</a></h4><h4 id="模板方法"><a href="#模板方法" class="headerlink" title="模板方法"></a><a href="/2017/12/06/template-method/index.html">模板方法</a></h4><h4 id="观察者"><a href="#观察者" class="headerlink" title="观察者"></a><a href="/2017/12/06/observer/index.html">观察者</a></h4><h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a><a href="/2017/12/07/iterator/index.html">迭代器</a></h4><h4 id="责任链"><a href="#责任链" class="headerlink" title="责任链"></a><a href="/2017/12/07/chain-of-responsibility/index.html">责任链</a></h4><h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a><a href="/2017/12/07/command/index.html">命令</a></h4><h4 id="备忘录"><a href="#备忘录" class="headerlink" title="备忘录"></a><a href="/2017/12/11/mementor/index.html">备忘录</a></h4><h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a><a href="/2017/12/13/state/index.html">状态</a></h4><h4 id="访问者"><a href="#访问者" class="headerlink" title="访问者"></a><a href="/2017/12/13/visitor/index.html">访问者</a></h4><h4 id="中介者"><a href="#中介者" class="headerlink" title="中介者"></a><a href="/2017/12/13/mediator/index.html">中介者</a></h4><h4 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a><a href="/2017/12/18/interpreter/index.html">解释器</a></h4>
+        <p>##直方图和百分位##</p>
+<p>Timer 和 Distribution summaries 支持收集数据用于展示它们的百分位分布, 有两种主要的方法用于浏览百分位</p>
+<ol>
+<li><p><strong>Percentitle histogram</strong> - Micrometer 会累积直方图的基础值,并且将准备好的一系列bucket运送往监控系统, 监控系统的查询语句可以从该柱状图中计算出百分位.现在, 只有Promethues和Atlas支持基于Histogram的百分位近似值计算, 分别是<font color="#bd4147"><em>histogram_quantitle</em></font> 和 <font color="#bd4147"><em>:percentile</em></font>, 如果是针对prometheus或者是Atlas, 更加建议使用这种下面这种方式, 因为你可以通过跨维度聚合直方图(简单的将一组维度中bucket的值简单的相加) 然后从直方图中推导聚合出百分位</p>
+</li>
+<li><p><strong>Client-side percentiles</strong> - Micrometer计算出每个meterID(以name和tags确定唯一性)的百分位近似值,然后把百分位的值运送到监控系统, 这一点没有percentile histogram来的灵活，因为它没有办法根据tags聚合出百分位近似值, 不过, 它提供了一些更深入的直方图分布的方式，这是在服务端进行基于直方图的百分位计算所不具备的.</p>
+</li>
+</ol>
+<p>下面是使用timer的方式创建直方图的案例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Timer.builder(&quot;my.timer&quot;)</span><br><span class="line">   .publishPercentiles(0.5, 0.95) // median and 95th percentile</span><br><span class="line">   .publishPercentileHistogram()</span><br><span class="line">   .sla(Duration.ofMillis(100))</span><br><span class="line">   .minimumExpectedValue(Duration.ofMillis(1))</span><br><span class="line">   .maximumExpectedValue(Duration.ofSeconds(10))</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><font color="#bd4147"><strong>publishPercentiles</strong></font> - 用于发布你应用中计算出来的百分位, 不支持多维度的聚合</p>
+</li>
+<li><p><font color="#bd4147"><strong>publishPercentileHistogram</strong></font> - 用于发布直方图, 适用于计算聚合(多维度)百分位近似值，在prometheus中用<font color="#bd4147">histogram_quantile</font>,在Atlas中用<font color="#bd4147">:percentile</font>. 直方图结果中的buckets，由micrometer预先生成，基于生成器，根据Netflix的经验来确定的，以产生大多数合理的误差界限，在大多数现实世界的timers和distribution summaries. 生成器默认会产生276个buckets,但是micrometer只会将那些范围在<font color="#bd4147">minimumExpectedValue </font>和<font color="#bd4147">maximumExpectedValue</font>之内的发送给监控系统, 同时, micrometer所产生的时间范围会在1毫秒到1分钟之间, 每个时间维度产生73个柱状图的bucket, <font color="#bd4147">publishPercentileHistogram</font>对于那些不支持聚合百分位近似值计算的系统来说，是不会生效的.</p>
+</li>
+<li><p><font color="#bd4147"><strong>sla</strong></font> - 使用SLA定义的存储桶发布累积直方图, 用于和参数<font color="#bd4147"><em>publishPercentileHistogram</em></font>在监控系统中做协调, 以支持聚合百分位, 这个设置会增加额外的buckets以发布histogram, 用于那些不支持聚合百分位的系统，这个设置可以发布仅拥有这些buckets的直方图.</p>
+</li>
+<li><p><font color="#bd4147"><strong>minimumExpectedValue/maximumExpectedValue</strong></font> 控制由<font color="#bd4147"><em>publishPercentileHistogram</em></font>产生的buckets的数，也可以用来控制精度和潜在Hdr直方图结构的memory footprint.</p>
+</li>
+</ol>
+<p>每次发送百分位数据到监控系统中时会产生额外的时间序列, 通常建议是不是把他们配置在核心组件中，而是应该作为程序中的依赖项,相反，应用可以通过meter filter来打开这些timers/distribution summaries的开关</p>
+<p>举例，假设我们有一些timers在基础包里面，这些timer名字的前缀叫<font color="#bd4147"><em>myservice</em></font>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">registry.timer(&quot;myservice.http.requests&quot;).record(..);</span><br><span class="line">registry.timer(&quot;myservice.db.requests&quot;).record(..);</span><br></pre></td></tr></table></figure>
+<p>我们可以通过meter filter的方式打开客户端方式的百分位统计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">We can turn on client-side percentiles for both timers via a meter filter:</span><br><span class="line"></span><br><span class="line">registry.config().meterFilter(</span><br><span class="line">    new MeterFilter() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) &#123;</span><br><span class="line">            if(id.getName().startsWith(&quot;myservice&quot;)) &#123;</span><br><span class="line">                return DistributionStatisticConfig.builder()</span><br><span class="line">                    .percentiles(0.95)</span><br><span class="line">                    .build()</span><br><span class="line">                    .merge(config);</span><br><span class="line">            &#125;</span><br><span class="line">            return config;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -390,9 +382,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+            <a href="/tags/micrometer/" rel="tag"># micrometer</a>
           
-            <a href="/tags/Pattern/" rel="tag"># Pattern</a>
+            <a href="/tags/监控/" rel="tag"># 监控</a>
           
         </div>
       
@@ -405,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/05/what-is-pattern/" rel="next" title="为什么需要设计模式">
-                <i class="fa fa-chevron-left"></i> 为什么需要设计模式
+              <a href="/2018/02/26/thread-poll/" rel="next" title="线程池">
+                <i class="fa fa-chevron-left"></i> 线程池
               </a>
             
           </div>
@@ -414,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/29/java-memory-partition/" rel="prev" title="JAVA内存分区">
-                JAVA内存分区 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -469,17 +457,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -545,22 +524,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则"><span class="nav-number">1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">2.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建型"><span class="nav-number">2.1.</span> <span class="nav-text">创建型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂"><span class="nav-number">2.1.1.</span> <span class="nav-text">工厂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">工厂方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象工厂"><span class="nav-number">2.1.3.</span> <span class="nav-text">抽象工厂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单例"><span class="nav-number">2.1.4.</span> <span class="nav-text">单例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建造者"><span class="nav-number">2.1.5.</span> <span class="nav-text">建造者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型"><span class="nav-number">2.1.6.</span> <span class="nav-text">原型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构型"><span class="nav-number">2.2.</span> <span class="nav-text">结构型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#适配器"><span class="nav-number">2.2.1.</span> <span class="nav-text">适配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#桥接"><span class="nav-number">2.2.2.</span> <span class="nav-text">桥接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#装饰者"><span class="nav-number">2.2.3.</span> <span class="nav-text">装饰者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代理"><span class="nav-number">2.2.4.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#门面"><span class="nav-number">2.2.5.</span> <span class="nav-text">门面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组合"><span class="nav-number">2.2.6.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#享元"><span class="nav-number">2.2.7.</span> <span class="nav-text">享元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行为型"><span class="nav-number">2.3.</span> <span class="nav-text">行为型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#策略"><span class="nav-number">2.3.1.</span> <span class="nav-text">策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">模板方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#观察者"><span class="nav-number">2.3.3.</span> <span class="nav-text">观察者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代器"><span class="nav-number">2.3.4.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#责任链"><span class="nav-number">2.3.5.</span> <span class="nav-text">责任链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备忘录"><span class="nav-number">2.3.7.</span> <span class="nav-text">备忘录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态"><span class="nav-number">2.3.8.</span> <span class="nav-text">状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问者"><span class="nav-number">2.3.9.</span> <span class="nav-text">访问者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中介者"><span class="nav-number">2.3.10.</span> <span class="nav-text">中介者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解释器"><span class="nav-number">2.3.11.</span> <span class="nav-text">解释器</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
